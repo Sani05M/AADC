@@ -12,17 +12,17 @@
 /* ── 1. CSS CUSTOM PROPERTIES ────────────────────────────────────────────── */
 :root {
   --navbar-h: 110px;          /* matches style.css fixed navbar height    */
-  --section-gap-xxl: 7rem;
-  --section-gap-xl:  5.5rem;
-  --section-gap-lg:  4.5rem;
-  --section-gap-md:  3.5rem;
-  --section-gap-sm:  2.75rem;
-  --section-gap-xs:  2rem;
+  --section-gap-xxl: 5rem;    /* tightened from 7rem */
+  --section-gap-xl:  4.5rem;
+  --section-gap-lg:  3.5rem;
+  --section-gap-md:  2.75rem;
+  --section-gap-sm:  2.25rem;
+  --section-gap-xs:  1.75rem;
 
-  --col-gap-xxl: 4rem;
-  --col-gap-xl:  3rem;
-  --col-gap-lg:  2.5rem;
-  --col-gap-md:  2rem;
+  --col-gap-xxl: 3.5rem;
+  --col-gap-xl:  2.75rem;
+  --col-gap-lg:  2rem;
+  --col-gap-md:  1.75rem;
 
   --card-radius: 16px;
   --bento-radius: 20px;
@@ -56,12 +56,65 @@ main > section.about-section:first-child,
   z-index: 2;
 }
 
-/* Two-column split grid */
+/* Two-column split grid — align-items:start so each col packs to its own top */
 .split-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--col-gap-xxl);
-  align-items: center;
+  align-items: start;
+}
+
+/* ── Adamas section: stretch right column to match left column height ── */
+#about-adamas .split-layout {
+  align-items: stretch;
+}
+
+/* Right col becomes a flex column so the bento image can grow */
+#about-adamas .split-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 3rem; /* aligns image top with heading level (clears section-tag height + margin) */
+}
+
+/* Image collage fills all remaining height after stats */
+#about-adamas .image-collage {
+  flex: 1 1 0;
+  min-height: 0;
+  grid-template-rows: 1fr 0.65fr;
+}
+
+/* ── AIU section: stretch left column so image fills gap below timeline ── */
+#about-aiu .split-layout {
+  align-items: stretch;
+}
+
+/* Left col becomes flex so image grows to fill remaining space */
+#about-aiu .split-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Timeline stays compact, image stretches */
+#about-aiu .timeline-visuals {
+  flex-shrink: 0;
+}
+
+/* Image fills ALL remaining height — key: flex-basis:0 + min-height:0 */
+#about-aiu .image-collage.mt-4 {
+  flex: 1 1 0;         /* grow:1  shrink:1  basis:0 — forces height from flex-grow */
+  min-height: 0;       /* removes default min-height:auto that was blocking growth */
+  margin-top: 0;       /* gap handled by flex gap above */
+  grid-template-rows: 1fr;  /* single-image row fills container */
+  height: 100%;        /* belt-and-suspenders for safari */
+}
+
+/* Make the image inside fill the full collage height */
+#about-aiu .image-collage.mt-4 .main-img {
+  height: 100%;
+  width: 100%;
+  min-height: 0;
 }
 
 .split-layout.reverse       { direction: rtl; }
@@ -125,10 +178,10 @@ main > section.about-section:first-child,
 .text-white { color: var(--white) !important; }
 
 /* utility spacing */
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem;   }
-.mt-5 { margin-top: 3rem;   }
-.mt-6 { margin-top: 4rem;   }
+.mt-3 { margin-top: 1rem;   }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 2rem;   }
+.mt-6 { margin-top: 3rem;   }
 .pl-4 { padding-left: 2rem; }
 
 /* ── 4. GLASSMORPHISM CARD ───────────────────────────────────────────────── */
@@ -194,22 +247,22 @@ main > section.about-section:first-child,
 /* AIU section – single image */
 .image-collage.single-img {
   grid-template-columns: 1fr;
-  grid-template-rows: 360px;
+  grid-template-rows: 280px;
 }
 .image-collage.single-img .main-img { grid-column: 1; grid-row: 1; }
 
 /* Fallback for .mt-4 used as class in HTML */
 .image-collage.mt-4 {
   grid-template-columns: 1fr;
-  grid-template-rows: 360px;
-  margin-top: 0;    /* margin handled by parent */
+  grid-template-rows: 280px;  /* was 360px — too tall */
+  margin-top: 1rem;
 }
 .image-collage.mt-4 .main-img { grid-column: 1; grid-row: 1; }
 
 /* AADC modern collage */
 .image-collage.modern {
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 260px 200px;
+  grid-template-rows: 340px 220px;  /* taller to match long left column */
 }
 .image-collage.modern .main-img            { grid-column: 1 / 3; grid-row: 1 / 2; }
 .image-collage.modern .float-img.bottom-left { grid-column: 1 / 2; grid-row: 2 / 3; }
@@ -285,12 +338,12 @@ main > section.about-section:first-child,
   line-height: inherit;
 }
 
-/* ── 8. STATS GRID ───────────────────────────────────────────────────────── */
+/* ── 8. STATS GRID ──────────────────────────────────────────────────────── */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);    /* fixed 4-up; responsive below */
-  gap: 1.25rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(2, 1fr);   /* 2×2 default; 4-col on desktop via MQ */
+  gap: 1rem;
+  margin-top: 1.25rem;
 }
 
 .stat-box {
@@ -339,7 +392,7 @@ main > section.about-section:first-child,
   border-color: rgba(30, 94, 255, 0.2);
 }
 
-/* AIU stats — only 3 columns */
+/* AIU stats — 3 columns on desktop, 2 on smaller */
 #about-aiu .stats-grid {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -826,8 +879,11 @@ main > section.about-section:first-child,
 /* ── XXL ≥ 1400px ── */
 @media (min-width: 1400px) {
   .container { max-width: 1320px; }
+  /* 4-col stats on big desktop */
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  #about-aiu .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .image-collage { grid-template-rows: 300px 220px; }
-  .image-collage.mt-4 { grid-template-rows: 400px; }
+  .image-collage.mt-4 { grid-template-rows: 300px; }
   .functions-grid { grid-template-columns: repeat(3, 1fr); }
   .achievements-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -835,9 +891,12 @@ main > section.about-section:first-child,
 /* ── XL  992–1399px ── */
 @media (max-width: 1399px) {
   .split-layout { gap: var(--col-gap-xl); }
+  /* 4-col stats on desktop */
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  #about-aiu .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .image-collage { grid-template-rows: 250px 185px; }
   .image-collage.modern { grid-template-rows: 240px 185px; }
-  .image-collage.mt-4 { grid-template-rows: 320px; }
+  .image-collage.mt-4 { grid-template-rows: 270px; }
 }
 
 /* ── LG  768–991px ── */
@@ -873,7 +932,9 @@ main > section.about-section:first-child,
   /* Achievements: 3-col stays fine */
   .achievements-grid { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
 
-  /* Stats: 4-col stays, shrink padding */
+  /* Stats: 2×2 grid on tablet (no room for 4-col) */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+  #about-aiu .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-box { padding: 1.25rem 0.75rem; }
 
   /* Impact: stack */
