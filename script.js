@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. MOBILE HAMBURGER MENU OVERLAY
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.navbar-nav');
-  
+
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
@@ -94,9 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const goToSlide = (n) => {
       slides[currentSlide].classList.remove('active');
       if (indicators[currentSlide]) indicators[currentSlide].classList.remove('active');
-      
+
       currentSlide = (n + slides.length) % slides.length;
-      
+
       slides[currentSlide].classList.add('active');
       if (indicators[currentSlide]) indicators[currentSlide].classList.add('active');
     };
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let count = 0;
       const duration = 2000; // 2 seconds total count animation
       const stepTime = Math.max(Math.floor(duration / target), 15);
-      
+
       const timer = setInterval(() => {
         count += Math.ceil(target / (duration / stepTime));
         if (count >= target) {
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const goToTestimonial = (index) => {
       currentTestimonial = index;
       testimonialTrack.style.transform = `translateX(-${currentTestimonial * 100}%)`;
-      
+
       tBullets.forEach(bullet => bullet.classList.remove('active'));
       if (tBullets[currentTestimonial]) {
         tBullets[currentTestimonial].classList.add('active');
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentGalleryIndex = 0;
 
   if (galleryItems.length > 0 && lightbox && lightboxImg) {
-    
+
     const openLightbox = (index) => {
       currentGalleryIndex = index;
       const item = galleryItems[currentGalleryIndex];
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       lightboxImg.src = img.src;
       lightboxCaption.textContent = `${title ? title.textContent : ''} - ${desc ? desc.textContent : ''}`;
-      
+
       lightbox.classList.add('active');
       body.style.overflow = 'hidden'; // Stop background scrolling
     };
@@ -352,19 +352,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // 11. BUTTON RIPPLE EFFECT GENERATOR
   const rippleButtons = document.querySelectorAll('.btn');
   rippleButtons.forEach(btn => {
-    btn.addEventListener('click', function(e) {
+    btn.addEventListener('click', function (e) {
       // Calculate cursor position inside button boundaries
       const x = e.clientX - e.target.getBoundingClientRect().left;
       const y = e.clientY - e.target.getBoundingClientRect().top;
-      
+
       // Create ripple element
       const ripples = document.createElement('span');
       ripples.classList.add('ripple');
       ripples.style.left = `${x}px`;
       ripples.style.top = `${y}px`;
-      
+
       this.appendChild(ripples);
-      
+
       // Clean up ripple after animation runs
       setTimeout(() => {
         ripples.remove();
@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 12. DYNAMIC CONTENT SMOOTH ANIMATED APPEARANCE (FADE IN ON SCROLL)
   const fadeOnScrollElements = document.querySelectorAll('.glass-card, .about-collage, .vision-card, .program-card, .fdp-card, .event-featured, .event-sidebar-card, .gallery-item, .team-card');
-  
+
   if (fadeOnScrollElements.length > 0) {
     // Add transition style inline initially
     fadeOnScrollElements.forEach(el => {
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
           scrollFadeObserver.unobserve(entry.target); // Animate once
         }
       });
-    }, { 
+    }, {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px' // Trigger slightly before element enters screen
     });
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (pdfFullscreenBtn && pdfContainer) {
     pdfFullscreenBtn.addEventListener('click', () => {
       pdfContainer.classList.toggle('fullscreen');
-      
+
       if (pdfContainer.classList.contains('fullscreen')) {
         body.style.overflow = 'hidden';
       } else {
@@ -424,33 +424,6 @@ document.addEventListener('DOMContentLoaded', () => {
         pdfContainer.classList.remove('fullscreen');
         body.style.overflow = '';
       }
-    });
-  }
-
-  // 14. PROGRAMS PAGE ACCORDION LOGIC
-  const accordions = document.querySelectorAll('.accordion');
-  
-  if (accordions.length > 0) {
-    accordions.forEach(acc => {
-      const header = acc.querySelector('.accordion-header');
-      const content = acc.querySelector('.accordion-content');
-      
-      header.addEventListener('click', () => {
-        // Toggle the active class on the clicked accordion
-        const isActive = acc.classList.contains('active');
-        
-        // Optional: Close all other accordions
-        accordions.forEach(otherAcc => {
-          otherAcc.classList.remove('active');
-          otherAcc.querySelector('.accordion-content').style.maxHeight = null;
-        });
-        
-        // If it wasn't active, open it
-        if (!isActive) {
-          acc.classList.add('active');
-          content.style.maxHeight = content.scrollHeight + 'px';
-        }
-      });
     });
   }
 
