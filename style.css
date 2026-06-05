@@ -861,83 +861,35 @@ img {
   color: var(--text-gray);
 }
 
-/* Layered Image Collage */
-.about-collage {
+/* Single Image Styling for About Section */
+.about-collage-wrap {
   position: relative;
-  height: 480px;
   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.collage-img-main {
-  width: 75%;
-  height: 80%;
+.about-single-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   border-radius: var(--border-radius-lg);
   box-shadow: 0 15px 35px rgba(7, 25, 82, 0.15);
   overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
   border: 4px solid var(--white);
+  position: relative;
 }
 
-.collage-img-floating {
-  width: 55%;
-  height: 60%;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--card-shadow-hover);
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  border: 4px solid var(--white);
-  animation: floatImage 4s ease-in-out infinite alternate;
+.about-single-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-.collage-badge {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: var(--border-radius-md);
-  padding: 1.2rem 1.8rem;
-  position: absolute;
-  top: 35%;
-  right: 15%;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  animation: floatImage 4s ease-in-out infinite alternate-reverse;
-  border-left: 5px solid var(--accent-blue);
-}
-
-.collage-badge-num {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 2.2rem;
-  color: var(--primary-deep);
-  line-height: 1;
-}
-
-.collage-badge-text {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-gray);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-@keyframes floatImage {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-15px);
-  }
+.about-single-image:hover img {
+  transform: scale(1.05);
 }
 
 
