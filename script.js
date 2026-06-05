@@ -427,4 +427,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 14. PROGRAMS PAGE ACCORDION LOGIC
+  const accordions = document.querySelectorAll('.accordion');
+  
+  if (accordions.length > 0) {
+    accordions.forEach(acc => {
+      const header = acc.querySelector('.accordion-header');
+      const content = acc.querySelector('.accordion-content');
+      
+      header.addEventListener('click', () => {
+        // Toggle the active class on the clicked accordion
+        const isActive = acc.classList.contains('active');
+        
+        // Optional: Close all other accordions
+        accordions.forEach(otherAcc => {
+          otherAcc.classList.remove('active');
+          otherAcc.querySelector('.accordion-content').style.maxHeight = null;
+        });
+        
+        // If it wasn't active, open it
+        if (!isActive) {
+          acc.classList.add('active');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
 });

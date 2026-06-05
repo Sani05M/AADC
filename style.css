@@ -3026,3 +3026,392 @@ img {
   }
 }
 }
+
+/* Programs Detailed Updates (Timeline, Accordions, Registration, Speakers) */
+
+/* Hero Meta Grid */
+.hero-meta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.meta-item svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--sky-blue);
+}
+
+/* Intro text columns */
+.intro-text-columns {
+  column-count: 2;
+  column-gap: 3rem;
+  text-align: left;
+}
+@media(max-width: 768px) {
+  .intro-text-columns {
+    column-count: 1;
+  }
+}
+
+/* FDP Overview Card */
+.program-overview-section {
+  padding: 0 var(--section-padding-desktop) 4rem var(--section-padding-desktop);
+  background: var(--ice-blue);
+}
+.fdp-overview-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem;
+  border-top: 5px solid var(--accent-blue);
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.overview-item h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.3rem;
+}
+.overview-item p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-deep);
+}
+.overview-convenors {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 1.5rem;
+}
+.overview-convenors h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.3rem;
+}
+.overview-convenors p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+}
+
+/* Schedule Timeline Table */
+.schedule-section {
+  padding: var(--section-padding-desktop);
+  background: var(--white);
+}
+.schedule-timeline {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow-x: auto;
+}
+.academic-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.academic-table th, .academic-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.academic-table th {
+  background: var(--primary-deep);
+  color: var(--white);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.academic-table tr:hover {
+  background: rgba(30, 94, 255, 0.03);
+}
+@media (max-width: 768px) {
+  .academic-table, .academic-table tbody, .academic-table tr, .academic-table td {
+    display: block;
+    width: 100%;
+  }
+  .academic-table thead {
+    display: none;
+  }
+  .academic-table tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .academic-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border-bottom: none;
+    font-size: 0.95rem;
+  }
+  .academic-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    text-align: left;
+    font-weight: 600;
+    color: var(--primary-deep);
+  }
+}
+
+/* Accordions (Daily Details) */
+.daily-details-section {
+  padding: var(--section-padding-desktop);
+}
+.accordion-container {
+  max-width: 1000px;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.accordion {
+  border-left: 4px solid var(--accent-blue);
+  overflow: hidden;
+}
+.accordion-header {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: var(--white);
+  transition: var(--transition-fast);
+}
+.accordion-header:hover {
+  background: var(--ice-blue);
+}
+.acc-title-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.acc-day {
+  background: var(--primary-deep);
+  color: var(--white);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.acc-title {
+  font-size: 1.2rem;
+  color: var(--primary-deep);
+  margin: 0;
+}
+.acc-speaker {
+  font-weight: 500;
+  color: var(--text-gray);
+  margin-left: auto;
+  margin-right: 2rem;
+}
+@media (max-width: 768px) {
+  .accordion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .acc-speaker {
+    margin-left: 0;
+  }
+}
+.acc-icon {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+.accordion.active .acc-icon {
+  transform: rotate(45deg);
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: var(--white);
+}
+.acc-inner {
+  padding: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+.acc-speaker-full {
+  color: var(--accent-blue);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.academic-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin: 1.5rem 0;
+}
+.academic-quote {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--primary-deep);
+  border-left: 3px solid var(--accent-blue);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* Speakers Section */
+.speakers-section {
+  padding: var(--section-padding-desktop);
+  background: var(--white);
+}
+.speakers-grid {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.speaker-card {
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  transition: var(--transition-medium);
+}
+.speaker-card:hover {
+  border-bottom-color: var(--accent-blue);
+  transform: translateY(-5px);
+}
+.speaker-img-wrap {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 4px solid var(--ice-blue);
+}
+.speaker-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.speaker-card h4 {
+  font-size: 1.2rem;
+  color: var(--primary-deep);
+  margin-bottom: 0.5rem;
+}
+.speaker-inst {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+/* Registration Section */
+.registration-section {
+  padding: var(--section-padding-desktop);
+  background: var(--white);
+}
+.registration-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  padding: 3rem;
+  background: var(--primary-deep);
+  color: var(--white);
+}
+.reg-left h2 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.reg-list {
+  list-style: none;
+  padding: 0;
+}
+.reg-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.reg-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--sky-blue);
+  font-weight: bold;
+}
+.reg-right {
+  background: rgba(255,255,255,0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.reg-right h3 {
+  color: var(--sky-blue);
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .registration-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Convenor Section */
+.convenor-section {
+  padding: var(--section-padding-desktop);
+}
+.convenor-grid {
+  max-width: 900px;
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+.convenor-card {
+  padding: 2.5rem;
+  border-top: 4px solid var(--accent-blue);
+  text-align: center;
+}
+.conv-info h3 {
+  font-size: 1.4rem;
+  color: var(--primary-deep);
+  margin-bottom: 0.5rem;
+}
+.conv-desig {
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+.conv-dept {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+.conv-info hr {
+  border: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+.conv-contact {
+  font-weight: 500;
+  color: var(--primary-deep);
+}
