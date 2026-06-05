@@ -818,8 +818,8 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 4.5rem;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
   align-items: center;
 }
 
@@ -873,7 +873,7 @@ img {
 
 .about-single-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 4;
   border-radius: var(--border-radius-lg);
   box-shadow: 0 15px 35px rgba(7, 25, 82, 0.15);
   overflow: hidden;
