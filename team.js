@@ -288,9 +288,9 @@ function createDirectoryCard(id, data) {
     <div class="team-card glass-card fade-up">
       <div class="team-img-wrap">
         <img src="" alt="">
-        <span class="team-card-badge"></span>
       </div>
       <div class="team-card-info">
+        <span class="team-card-badge"></span>
         <h3></h3>
         <p class="role"></p>
         <p class="org"></p>
