@@ -449,9 +449,10 @@
 }
 
 .team-card-badge {
-  position: absolute;
-  top: 15px;
-  left: 15px;
+  position: static;
+  display: inline-block;
+  margin: 0 auto 1rem auto;
+  width: fit-content;
   padding: 0.35rem 0.9rem;
   border-radius: 50px;
   font-family: var(--font-headings);
@@ -459,7 +460,7 @@
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   z-index: 5;
 }
 

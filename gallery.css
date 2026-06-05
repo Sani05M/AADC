@@ -1,0 +1,404 @@
+/* ── 0. CSS VARIABLES ────────────────────────────────────────────────────── */
+:root {
+  --navbar-h: 110px;
+  --section-gap-xxl: 5rem;
+  --section-gap-lg: 3.5rem;
+  --section-gap-md: 2.75rem;
+  --section-gap-sm: 2.25rem;
+  --section-gap-xs: 1.75rem;
+}
+
+/* ── 1. HERO SECTION ─────────────────────────────────────────────────────── */
+.gallery-hero-section {
+  padding: calc(var(--navbar-h) + var(--section-gap-xxl)) clamp(1rem, 4vw, 2.5rem) var(--section-gap-lg) clamp(1rem, 4vw, 2.5rem) !important;
+  background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(30, 94, 255, 0.05);
+}
+
+.gallery-hero-section::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(800px, 90vw);
+  height: min(300px, 40vh);
+  background: radial-gradient(circle, rgba(30, 94, 255, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gallery-hero-section .container {
+  max-width: 850px;
+  position: relative;
+  z-index: 2;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  color: var(--primary-deep);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.page-desc {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  color: var(--text-gray);
+  line-height: 1.7;
+  margin: 0 auto;
+}
+
+/* ── 2. GALLERY MAIN SECTION ────────────────────────────────────────────── */
+.gallery-section {
+  padding: var(--section-gap-lg) clamp(1rem, 4vw, 2.5rem) var(--section-gap-xxl) clamp(1rem, 4vw, 2.5rem);
+  background-color: var(--ice-blue);
+  position: relative;
+  z-index: 2;
+}
+
+/* Categories Filter Bar */
+.gallery-filter-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto var(--section-gap-lg) auto;
+}
+
+.filter-btn {
+  background: var(--white);
+  border: 1px solid rgba(30, 94, 255, 0.15);
+  color: var(--text-dark);
+  padding: 0.65rem 1.6rem;
+  border-radius: 50px;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: clamp(0.82rem, 1.2vw, 0.92rem);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(7, 25, 82, 0.03);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--primary-academic);
+  color: var(--white);
+  border-color: var(--primary-academic);
+  box-shadow: 0 8px 20px rgba(30, 94, 255, 0.2);
+}
+
+/* ── 3. RESPONSIVE GRID LAYOUT ───────────────────────────────────────────── */
+.gallery-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Gallery Card Design */
+.gallery-card {
+  padding: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: var(--card-radius);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: cardFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.gallery-card.hide {
+  display: none;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(7, 25, 82, 0.1);
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Gallery Image Container */
+.gallery-img-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: var(--primary-deep);
+}
+
+.gallery-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card:hover .gallery-img-wrap img {
+  transform: scale(1.08);
+}
+
+/* Hover Zoom Overlay */
+.gallery-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 25, 82, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 3;
+}
+
+.gallery-card:hover .gallery-hover-overlay {
+  opacity: 1;
+}
+
+.zoom-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transform: scale(0.7);
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-card:hover .zoom-icon {
+  transform: scale(1);
+}
+
+/* Card Information Block */
+.gallery-card-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+  background: var(--white);
+  border-top: 1px solid rgba(30, 94, 255, 0.04);
+}
+
+.gallery-card-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  padding: 0.28rem 0.8rem;
+  border-radius: 50px;
+  width: fit-content;
+  font-family: var(--font-headings);
+}
+
+/* Tag Specific Color Systems */
+.gallery-card-tag.event {
+  background-color: rgba(30, 94, 255, 0.08);
+  color: var(--accent-blue);
+}
+
+.gallery-card-tag.fdp {
+  background-color: rgba(16, 185, 129, 0.08);
+  color: #10B981;
+}
+
+.gallery-card-tag.campus {
+  background-color: rgba(139, 92, 246, 0.08);
+  color: #8B5CF6;
+}
+
+.gallery-card-info h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-deep);
+  margin: 0;
+  line-height: 1.35;
+  font-family: var(--font-headings);
+  transition: color 0.25s ease;
+}
+
+.gallery-card:hover .gallery-card-info h3 {
+  color: var(--accent-blue);
+}
+
+.gallery-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-gray);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ── 4. RESPONSIVE BREAKPOINTS ───────────────────────────────────────────── */
+
+/* Tablet & Smaller Desktops */
+@media (max-width: 991px) {
+  .gallery-hero-section {
+    padding-top: calc(var(--navbar-h) + var(--section-gap-lg)) !important;
+    padding-bottom: var(--section-gap-md) !important;
+  }
+
+  .gallery-grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .gallery-filter-wrap {
+    margin-bottom: var(--section-gap-md);
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 650px) {
+  .gallery-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery-hero-section {
+    padding-top: calc(var(--navbar-h) + var(--section-gap-sm)) !important;
+    padding-bottom: var(--section-gap-sm) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-filter-wrap {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .gallery-card-info {
+    padding: 1.25rem;
+  }
+
+  .gallery-hero-section {
+    padding-top: calc(var(--navbar-h) + var(--section-gap-xs)) !important;
+    padding-bottom: var(--section-gap-xs) !important;
+  }
+}
+
+/* ── 5. SCROLL FADE AND REVEAL ANIMATIONS ────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 6. PREMIUM LIGHTBOX CONTROLS OVERRIDES ──────────────────────────────── */
+.lightbox-close {
+  position: absolute !important;
+  top: 25px !important;
+  right: 25px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: var(--white) !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  font-size: 2.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 10020 !important;
+  padding-bottom: 6px !important; /* Visual vertical adjustment for cross symbol */
+}
+
+.lightbox-close:hover {
+  background: var(--accent-blue) !important;
+  border-color: var(--accent-blue) !important;
+  transform: rotate(90deg) !important;
+}
+
+.lightbox-nav {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: var(--white) !important;
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  font-size: 2.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 10020 !important;
+}
+
+.lightbox-nav:hover {
+  background: var(--accent-blue) !important;
+  border-color: var(--accent-blue) !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+.lightbox-prev {
+  left: 40px !important;
+}
+
+.lightbox-next {
+  right: 40px !important;
+}
+
+/* Responsive Overrides for Lightbox Controls */
+@media (max-width: 767px) {
+  .lightbox-nav {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.8rem !important;
+  }
+  .lightbox-prev {
+    left: 15px !important;
+  }
+  .lightbox-next {
+    right: 15px !important;
+  }
+  .lightbox-close {
+    top: 15px !important;
+    right: 15px !important;
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.8rem !important;
+    padding-bottom: 4px !important;
+  }
+}
