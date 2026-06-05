@@ -2230,6 +2230,22 @@ img {
     padding: var(--section-padding-tablet) !important;
   }
 
+  .navbar {
+    height: 100px !important;
+  }
+
+  .nav-logo {
+    height: 70px !important;
+    transform: scale(1.6) !important;
+  }
+
+  /* First section of secondary pages clears fixed navbar */
+  .about-section:first-of-type,
+  .directory-section,
+  .gallery-hero-section {
+    padding-top: calc(100px + 3.5rem) !important;
+  }
+
   /* Hamburger & Responsive Navbar overlay */
   .hamburger {
     display: block;
@@ -2259,6 +2275,16 @@ img {
 
   .nav-link {
     font-size: 1.15rem;
+    color: var(--white) !important;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--sky-blue) !important;
+  }
+
+  .nav-link::after {
+    background: var(--sky-blue) !important;
   }
 
   .hamburger.active .hamburger-line:nth-child(1) {
@@ -2324,11 +2350,24 @@ img {
   }
 
   .navbar {
-    padding: 1rem 1.5rem;
+    height: 90px !important;
+    padding: 0.75rem 1.5rem;
   }
 
   .navbar.scrolled {
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .nav-logo {
+    height: 65px !important;
+    transform: scale(1.3) !important;
+  }
+
+  /* First section of secondary pages clears fixed navbar on mobile */
+  .about-section:first-of-type,
+  .directory-section,
+  .gallery-hero-section {
+    padding-top: calc(90px + 2.5rem) !important;
   }
 
   .hero-btns {
@@ -2379,6 +2418,13 @@ img {
 @media (max-width: 575px) {
   .navbar-nav {
     width: 100%;
+  }
+
+  /* First section of secondary pages clears fixed navbar on extra small screens */
+  .about-section:first-of-type,
+  .directory-section,
+  .gallery-hero-section {
+    padding-top: calc(90px + 1.75rem) !important;
   }
 
   .about-collage {
