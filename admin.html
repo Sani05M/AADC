@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | AADC Team Manager</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div class="login-screen" id="login-screen">
+    <div class="login-card">
+      <div class="login-logo">
+        <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#1E5EFF" stroke-width="2"/><path d="M20 6L32 13V24C32 31 20 36 20 36C20 36 8 31 8 24V13L20 6Z" fill="#1E5EFF" fill-opacity="0.15" stroke="#1E5EFF" stroke-width="1.5"/><rect x="14" y="17" width="12" height="9" rx="1.5" stroke="#1E5EFF" stroke-width="1.5"/><circle cx="20" cy="17" r="3" stroke="#1E5EFF" stroke-width="1.5"/></svg>
+      </div>
+      <h1>AADC Admin Panel</h1>
+      <p>Team Directory Manager — Authorized Access Only</p>
+      <div class="login-field">
+        <label for="admin-password">Admin Password</label>
+        <input type="password" id="admin-password" placeholder="Enter password..." autocomplete="current-password">
+        <div class="login-error" id="login-error">Incorrect password. Please try again.</div>
+      </div>
+      <button class="btn-login" id="login-btn">Sign In</button>
+      <a href="team.html" class="back-link">← Back to Team Page</a>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD -->
+  <div class="admin-shell" id="admin-shell" style="display:none">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#1E5EFF" stroke-width="2"/><path d="M16 4L26 10V20C26 26 16 30 16 30S6 26 6 20V10L16 4Z" fill="#1E5EFF" fill-opacity="0.2" stroke="#1E5EFF"/></svg>
+        <span>AADC Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active" data-view="members">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/></svg>
+          Team Members
+        </a>
+        <a href="#" class="sidebar-link" data-view="export">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
+          Export / Import
+        </a>
+        <a href="#" class="sidebar-link" data-view="settings">
+          <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96a7.02 7.02 0 0 0-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.47.47 0 0 0-.59.22L2.74 8.87a.49.49 0 0 0 .12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.37 1.04.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.57 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.49.49 0 0 0-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fill="currentColor"/></svg>
+          Settings
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="team.html" target="_blank" class="sidebar-preview-btn">View Live Page ↗</a>
+        <button class="sidebar-logout" id="logout-btn">Log Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+
+      <!-- Header Bar -->
+      <header class="admin-header">
+        <div>
+          <h2 id="view-title">Team Members</h2>
+          <p id="view-subtitle">Edit photos, bios, roles, and skills for each team member.</p>
+        </div>
+        <div class="admin-header-actions">
+          <div class="search-wrap">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16a6.47 6.47 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/></svg>
+            <input type="text" id="admin-search" placeholder="Search members...">
+          </div>
+          <button class="btn-add" id="add-member-btn">+ Add Member</button>
+        </div>
+      </header>
+
+      <!-- MEMBERS VIEW -->
+      <div class="view" id="view-members">
+        <div class="member-stats-bar">
+          <div class="stat-pill">Total <strong id="stat-total">0</strong></div>
+          <div class="stat-pill">Leadership <strong id="stat-leadership">0</strong></div>
+          <div class="stat-pill">Academic <strong id="stat-academic">0</strong></div>
+          <div class="stat-pill">Industry <strong id="stat-industry">0</strong></div>
+          <div class="stat-pill">Admins <strong id="stat-admin">0</strong></div>
+          <div class="stat-pill modified"><span id="stat-modified">0</span> modified</div>
+        </div>
+        <div class="members-grid" id="members-grid"></div>
+      </div>
+
+      <!-- EXPORT VIEW -->
+      <div class="view" id="view-export" style="display:none">
+        <div class="export-cards">
+          <div class="export-card">
+            <div class="export-icon">📥</div>
+            <h3>Export Team Data</h3>
+            <p>Download all current team member overrides as a JSON file. Share this with your developer to apply changes permanently.</p>
+            <button class="btn-action" id="export-json-btn">Download JSON</button>
+          </div>
+          <div class="export-card">
+            <div class="export-icon">📤</div>
+            <h3>Import Team Data</h3>
+            <p>Upload a previously exported JSON file to restore or migrate admin overrides to this browser.</p>
+            <input type="file" id="import-file" accept=".json" style="display:none">
+            <button class="btn-action" id="import-json-btn">Upload JSON</button>
+          </div>
+          <div class="export-card danger">
+            <div class="export-icon">🗑️</div>
+            <h3>Reset All Changes</h3>
+            <p>Clear all admin overrides and restore the original default team data. This cannot be undone.</p>
+            <button class="btn-action danger" id="reset-all-btn">Reset Everything</button>
+          </div>
+        </div>
+        <div class="data-preview-wrap">
+          <h3>Current Override Data Preview</h3>
+          <pre id="data-preview" class="data-preview"></pre>
+        </div>
+      </div>
+
+      <!-- SETTINGS VIEW -->
+      <div class="view" id="view-settings" style="display:none">
+        <div class="settings-card">
+          <h3>Change Admin Password</h3>
+          <p>Update the password required to access this admin panel.</p>
+          <div class="settings-field">
+            <label>Current Password</label>
+            <input type="password" id="current-pwd" placeholder="Current password">
+          </div>
+          <div class="settings-field">
+            <label>New Password</label>
+            <input type="password" id="new-pwd" placeholder="New password (min 6 chars)">
+          </div>
+          <div class="settings-field">
+            <label>Confirm New Password</label>
+            <input type="password" id="confirm-pwd" placeholder="Repeat new password">
+          </div>
+          <div class="settings-msg" id="settings-msg"></div>
+          <button class="btn-action" id="change-pwd-btn">Update Password</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- EDIT MODAL -->
+  <div class="edit-modal" id="edit-modal" style="display:none">
+    <div class="edit-modal-backdrop" id="edit-backdrop"></div>
+    <div class="edit-modal-box">
+      <div class="edit-modal-header">
+        <h3 id="edit-modal-title">Edit Member</h3>
+        <button class="edit-close" id="edit-close">×</button>
+      </div>
+
+      <div class="edit-modal-body">
+        <!-- Left: Photo -->
+        <div class="edit-photo-col">
+          <div class="edit-photo-wrap" id="edit-photo-wrap">
+            <img id="edit-photo-preview" src="" alt="Member Photo">
+            <div class="edit-photo-overlay">
+              <svg viewBox="0 0 24 24"><path d="M3 8C3 6.9 3.9 6 5 6h2.17L8.4 4.65A1 1 0 0 1 9.24 4h5.52a1 1 0 0 1 .84.65L16.83 6H19c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H5a2 2 0 0 1-2-2V8zm9 9a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="white"/></svg>
+              Change Photo
+            </div>
+            <input type="file" id="edit-photo-input" accept="image/*" style="display:none">
+          </div>
+          <p class="photo-hint">Click photo to upload a new image</p>
+          <button class="btn-reset-photo" id="reset-photo-btn">Reset to Default</button>
+        </div>
+
+        <!-- Right: Fields -->
+        <div class="edit-fields-col">
+          <input type="hidden" id="edit-member-id">
+
+          <div class="field-row two-col">
+            <div class="field-group">
+              <label>Full Name *</label>
+              <input type="text" id="edit-name" placeholder="Prof. (Dr.) Full Name">
+            </div>
+            <div class="field-group">
+              <label>Category *</label>
+              <select id="edit-category">
+                <option value="Leadership">Leadership</option>
+                <option value="Academic Expert">Academic Expert</option>
+                <option value="Industry Leader">Industry Leader</option>
+                <option value="Administrator">Administrator</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label>Role / Designation *</label>
+            <input type="text" id="edit-role" placeholder="Professor & HoD, Dept. of...">
+          </div>
+
+          <div class="field-group">
+            <label>Organisation / Institution *</label>
+            <input type="text" id="edit-org" placeholder="University / Company Name">
+          </div>
+
+          <div class="field-group">
+            <label>Email Address</label>
+            <input type="email" id="edit-email" placeholder="name@institution.ac.in">
+          </div>
+
+          <div class="field-group">
+            <label>Biography</label>
+            <textarea id="edit-bio" rows="5" placeholder="Write a detailed professional biography..."></textarea>
+          </div>
+
+          <div class="field-group">
+            <label>Areas of Expertise <span class="hint">(comma-separated)</span></label>
+            <input type="text" id="edit-skills" placeholder="Research, Policy, Governance, ...">
+          </div>
+        </div>
+      </div>
+
+      <div class="edit-modal-footer">
+        <span class="edit-status" id="edit-status"></span>
+        <div class="edit-footer-btns">
+          <button class="btn-cancel" id="edit-cancel">Cancel</button>
+          <button class="btn-save" id="edit-save">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD MEMBER MODAL -->
+  <div class="edit-modal" id="add-modal" style="display:none">
+    <div class="edit-modal-backdrop" id="add-backdrop"></div>
+    <div class="edit-modal-box">
+      <div class="edit-modal-header">
+        <h3>Add New Team Member</h3>
+        <button class="edit-close" id="add-close">×</button>
+      </div>
+      <div class="edit-modal-body single-col">
+        <div class="field-row two-col">
+          <div class="field-group">
+            <label>Member ID (slug) *</label>
+            <input type="text" id="new-id" placeholder="e.g. john-doe">
+          </div>
+          <div class="field-group">
+            <label>Category *</label>
+            <select id="new-category">
+              <option value="Leadership">Leadership</option>
+              <option value="Academic Expert">Academic Expert</option>
+              <option value="Industry Leader">Industry Leader</option>
+              <option value="Administrator">Administrator</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-group">
+          <label>Full Name *</label>
+          <input type="text" id="new-name" placeholder="Prof. (Dr.) Full Name">
+        </div>
+        <div class="field-group">
+          <label>Role / Designation *</label>
+          <input type="text" id="new-role" placeholder="Professor & HoD, Dept. of...">
+        </div>
+        <div class="field-group">
+          <label>Organisation *</label>
+          <input type="text" id="new-org" placeholder="University / Company">
+        </div>
+        <div class="field-group">
+          <label>Email</label>
+          <input type="email" id="new-email" placeholder="name@institution.ac.in">
+        </div>
+        <div class="field-group">
+          <label>Biography</label>
+          <textarea id="new-bio" rows="4" placeholder="Professional biography..."></textarea>
+        </div>
+        <div class="field-group">
+          <label>Expertise Tags <span class="hint">(comma-separated)</span></label>
+          <input type="text" id="new-skills" placeholder="Research, Policy, ...">
+        </div>
+      </div>
+      <div class="edit-modal-footer">
+        <span class="edit-status" id="add-status"></span>
+        <div class="edit-footer-btns">
+          <button class="btn-cancel" id="add-cancel">Cancel</button>
+          <button class="btn-save" id="add-save">Add Member</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js?v=20260604"></script>
+</body>
+</html>
