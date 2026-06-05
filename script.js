@@ -402,4 +402,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 13. PDF VIEWER FULLSCREEN TOGGLE
+  const pdfFullscreenBtn = document.getElementById('pdf-fullscreen');
+  const pdfContainer = document.getElementById('pdf-container');
+  const body = document.body;
+
+  if (pdfFullscreenBtn && pdfContainer) {
+    pdfFullscreenBtn.addEventListener('click', () => {
+      pdfContainer.classList.toggle('fullscreen');
+      
+      if (pdfContainer.classList.contains('fullscreen')) {
+        body.style.overflow = 'hidden';
+      } else {
+        body.style.overflow = '';
+      }
+    });
+
+    // Exit fullscreen on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pdfContainer.classList.contains('fullscreen')) {
+        pdfContainer.classList.remove('fullscreen');
+        body.style.overflow = '';
+      }
+    });
+  }
+
 });
