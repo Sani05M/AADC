@@ -377,7 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const fadeOnScrollElements = document.querySelectorAll('.glass-card, .about-collage, .vision-card, .program-card, .fdp-card, .event-featured, .event-sidebar-card, .gallery-item, .team-card');
 
   if (fadeOnScrollElements.length > 0) {
-    // Add transition style inline initially
+    // Disabling JS opacity to prevent layout hiding issues
+    /*
     fadeOnScrollElements.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
@@ -389,17 +390,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting) {
           entry.target.style.opacity = '1';
           entry.target.style.transform = 'translateY(0)';
-          scrollFadeObserver.unobserve(entry.target); // Animate once
+          scrollFadeObserver.unobserve(entry.target);
         }
       });
     }, {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px' // Trigger slightly before element enters screen
+      rootMargin: '0px 0px -50px 0px'
     });
 
     fadeOnScrollElements.forEach(el => {
       scrollFadeObserver.observe(el);
     });
+    */
   }
 
   // 13. PDF VIEWER FULLSCREEN TOGGLE
