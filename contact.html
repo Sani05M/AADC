@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AADC | Contact Us</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Contact the Academic and Administrative Development Centre (AADC), Adamas University. Reach out for FDP registrations, program inquiries, and collaboration.">
+  <meta name="keywords" content="AADC Contact, Adamas University, FDP Registration, Academic Development Centre, Contact AADC">
+  <meta name="author" content="Adamas University AADC">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =========================================================
+       CONTACT PAGE — SCOPED STYLES
+       ========================================================= */
+
+    /* ── Hero ── */
+    .contact-hero {
+      min-height: 68vh;
+      background: linear-gradient(135deg, #071952 0%, #0B3D91 55%, #1E5EFF 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 110px;
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(30,94,255,0.25) 0%, transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(220,235,255,0.08) 0%, transparent 50%);
+    }
+
+    /* Floating shapes */
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.1);
+      animation: float-shape 8s ease-in-out infinite;
+    }
+    .hero-shape:nth-child(1) { width: 320px; height: 320px; top: -80px; right: -80px; animation-delay: 0s; }
+    .hero-shape:nth-child(2) { width: 180px; height: 180px; bottom: 40px; right: 25%; animation-delay: 2s; border-color: rgba(255,255,255,0.07); }
+    .hero-shape:nth-child(3) { width: 90px; height: 90px; top: 30%; left: 5%; animation-delay: 4s; border-color: rgba(255,255,255,0.12); }
+
+    @keyframes float-shape {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(6deg); }
+    }
+
+    .contact-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .breadcrumb-nav a { color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .breadcrumb-nav a:hover { color: #fff; }
+    .breadcrumb-nav span { color: #fff; font-weight: 600; }
+    .breadcrumb-nav i { font-size: 0.7rem; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 0.4rem 1.1rem;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title span {
+      background: linear-gradient(90deg, #DCEBFF, #a5c8ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      color: rgba(255,255,255,0.78);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.75;
+      margin-bottom: 2.2rem;
+      max-width: 520px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-hero-primary {
+      background: #fff;
+      color: #0B3D91;
+      font-weight: 700;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      transition: all 0.3s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+    .btn-hero-ghost {
+      border: 2px solid rgba(255,255,255,0.45);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      transition: all 0.3s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-hero-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+
+    /* Illustration box (right side) */
+    .hero-illustration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-illust-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 28px;
+      padding: 2.5rem;
+      backdrop-filter: blur(16px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 420px;
+    }
+    .illust-stat {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 1.4rem 1rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .illust-stat:hover { background: rgba(255,255,255,0.17); transform: translateY(-3px); }
+    .illust-stat i { font-size: 2rem; color: #DCEBFF; margin-bottom: 0.6rem; display: block; }
+    .illust-stat .stat-val { font-family: 'Montserrat', sans-serif; font-size: 1.7rem; font-weight: 800; color: #fff; display: block; }
+    .illust-stat .stat-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.65); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ── Quick Contact Info Cards ── */
+    .contact-info-section {
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      background: #F7FBFF;
+    }
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .cinfo-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(11,61,145,0.08);
+      box-shadow: 0 4px 20px rgba(7,25,82,0.06);
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .cinfo-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0B3D91, #1E5EFF);
+      transform: scaleX(0);
+      transition: transform 0.35s;
+      transform-origin: left;
+    }
+    .cinfo-card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(30,94,255,0.12); border-color: rgba(30,94,255,0.2); }
+    .cinfo-card:hover::before { transform: scaleX(1); }
+    .cinfo-icon {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, #EDF3FF, #DCEBFF);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 1.6rem;
+      color: #0B3D91;
+    }
+    .cinfo-card h4 { font-size: 1.05rem; color: #071952; margin-bottom: 0.5rem; font-family: 'Poppins', sans-serif; }
+    .cinfo-card p { font-size: 0.9rem; color: #4A5568; line-height: 1.65; margin: 0; }
+    .cinfo-card a { color: #1E5EFF; font-weight: 600; font-size: 0.92rem; }
+
+    /* ── Contact Cards (People) ── */
+    .people-section {
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      background: #fff;
+    }
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .people-card {
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid rgba(11,61,145,0.1);
+      box-shadow: 0 4px 20px rgba(7,25,82,0.06);
+      overflow: hidden;
+      transition: all 0.35s;
+      position: relative;
+    }
+    .people-card:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(30,94,255,0.14); }
+    .people-card-top {
+      background: linear-gradient(135deg, #071952, #0B3D91);
+      padding: 2.5rem 1.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .people-avatar {
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1E5EFF, #DCEBFF);
+      margin: 0 auto 1rem;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      border: 3px solid rgba(255,255,255,0.25);
+    }
+    .people-card-top h4 { color: #fff; font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .people-card-top .designation { color: rgba(255,255,255,0.75); font-size: 0.85rem; letter-spacing: 0.5px; }
+    .dept-badge {
+      display: inline-block;
+      background: rgba(30,94,255,0.3);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #DCEBFF;
+      border-radius: 50px;
+      padding: 0.25rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 0.6rem;
+      letter-spacing: 0.5px;
+    }
+    .people-card-body { padding: 1.5rem; }
+    .people-contact-row {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.9rem;
+      color: #4A5568;
+    }
+    .people-contact-row i { color: #1E5EFF; margin-top: 2px; width: 16px; flex-shrink: 0; }
+    .people-contact-row a { color: #1E5EFF; font-weight: 500; word-break: break-all; }
+    .people-social { display: flex; gap: 0.6rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid #EDF3FF; }
+    .people-social a {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: #EDF3FF;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      color: #0B3D91;
+      transition: all 0.25s;
+    }
+    .people-social a:hover { background: #0B3D91; color: #fff; transform: translateY(-2px); }
+
+    /* ── Contact Form ── */
+    .form-section {
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      background: linear-gradient(160deg, #F7FBFF 0%, #EDF3FF 100%);
+    }
+    .form-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .form-info h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); color: #071952; margin-bottom: 1rem; }
+    .form-info p { color: #4A5568; line-height: 1.75; margin-bottom: 2rem; font-size: 1rem; }
+    .form-highlight {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.75rem;
+      border: 1px solid rgba(11,61,145,0.1);
+      box-shadow: 0 4px 16px rgba(7,25,82,0.05);
+      margin-bottom: 1.5rem;
+    }
+    .form-highlight h4 { font-size: 1rem; color: #071952; margin-bottom: 0.3rem; }
+    .form-highlight p { font-size: 0.9rem; margin: 0; }
+    .form-highlight i { color: #1E5EFF; margin-right: 0.5rem; }
+
+    .contact-form {
+      background: #fff;
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 40px rgba(7,25,82,0.08);
+      border: 1px solid rgba(11,61,145,0.08);
+    }
+    .contact-form h3 { font-size: 1.5rem; color: #071952; margin-bottom: 0.5rem; }
+    .contact-form .form-sub { color: #4A5568; font-size: 0.95rem; margin-bottom: 2rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+    .form-group { position: relative; margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4A5568;
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.3px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      color: #0A1128;
+      background: #FAFBFF;
+      transition: all 0.25s;
+      outline: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #1E5EFF;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(30,94,255,0.08);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234A5568'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.8rem center; background-size: 1.2rem; padding-right: 2.5rem; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #0B3D91, #1E5EFF);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(30,94,255,0.4); }
+    .btn-submit:active { transform: translateY(0); }
+
+    .form-success {
+      display: none;
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 1px solid #6ee7b7;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .form-success i { color: #059669; font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+    .form-success p { color: #064e3b; font-weight: 600; margin: 0; font-size: 0.95rem; }
+
+    /* ── Location Section ── */
+    .location-section {
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      background: #fff;
+    }
+    .location-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .location-img-wrap {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 50px rgba(7,25,82,0.12);
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #071952, #0B3D91);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .location-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .location-img-placeholder {
+      text-align: center; color: rgba(255,255,255,0.6);
+    }
+    .location-img-placeholder i { font-size: 4rem; margin-bottom: 1rem; display: block; color: rgba(255,255,255,0.4); }
+    .location-img-placeholder span { font-size: 1rem; }
+
+    .location-info h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); color: #071952; margin-bottom: 1rem; }
+    .location-info p { color: #4A5568; line-height: 1.75; margin-bottom: 2rem; }
+    .location-detail {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .loc-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: linear-gradient(135deg, #EDF3FF, #DCEBFF);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: #0B3D91;
+    }
+    .loc-text strong { display: block; font-size: 0.95rem; color: #071952; margin-bottom: 0.2rem; font-family: 'Poppins', sans-serif; }
+    .loc-text span { font-size: 0.9rem; color: #4A5568; line-height: 1.6; }
+
+    /* ── Map Section ── */
+    .map-section {
+      padding: clamp(4rem, 8vw, 5rem) 2rem;
+      background: #F7FBFF;
+    }
+    .map-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .map-container {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(7,25,82,0.1);
+      border: 1px solid rgba(11,61,145,0.1);
+      height: 480px;
+      position: relative;
+      transition: box-shadow 0.35s;
+      background: linear-gradient(135deg, #071952 0%, #0B3D91 100%);
+    }
+    .map-container:hover { box-shadow: 0 20px 60px rgba(30,94,255,0.2); }
+    .map-container iframe { width: 100%; height: 100%; border: none; display: block; }
+    .map-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      gap: 1rem;
+    }
+    .map-placeholder i { font-size: 4rem; color: rgba(255,255,255,0.4); }
+    .map-placeholder h3 { color: #fff; font-size: 1.4rem; margin: 0; }
+    .map-placeholder p { color: rgba(255,255,255,0.65); margin: 0; font-size: 0.95rem; }
+    .map-placeholder .map-address {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 1rem 1.75rem;
+      font-size: 0.9rem;
+      color: #DCEBFF;
+      margin-top: 0.5rem;
+      max-width: 500px;
+    }
+
+    /* ── Department Directory ── */
+    .directory-section {
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      background: #fff;
+    }
+    .directory-inner { max-width: 1100px; margin: 0 auto; }
+    .directory-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 0.75rem;
+    }
+    .directory-table thead th {
+      background: linear-gradient(135deg, #071952, #0B3D91);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 1rem 1.25rem;
+      text-transform: uppercase;
+    }
+    .directory-table thead th:first-child { border-radius: 12px 0 0 12px; }
+    .directory-table thead th:last-child { border-radius: 0 12px 12px 0; }
+    .directory-table tbody tr {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(7,25,82,0.05);
+      border-radius: 12px;
+      transition: all 0.25s;
+    }
+    .directory-table tbody tr:hover { transform: translateX(4px); box-shadow: 0 4px 20px rgba(30,94,255,0.1); }
+    .directory-table tbody td {
+      padding: 1rem 1.25rem;
+      font-size: 0.92rem;
+      color: #4A5568;
+      border-top: 1px solid #EDF3FF;
+      border-bottom: 1px solid #EDF3FF;
+    }
+    .directory-table tbody td:first-child { border-left: 1px solid #EDF3FF; border-radius: 12px 0 0 12px; font-weight: 700; color: #071952; font-family: 'Poppins', sans-serif; font-size: 0.9rem; }
+    .directory-table tbody td:last-child { border-right: 1px solid #EDF3FF; border-radius: 0 12px 12px 0; }
+    .directory-table a { color: #1E5EFF; font-weight: 500; transition: color 0.2s; }
+    .directory-table a:hover { color: #071952; }
+    .dir-ext {
+      display: inline-block;
+      background: #EDF3FF;
+      border-radius: 6px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.8rem;
+      color: #0B3D91;
+      font-weight: 600;
+    }
+
+    /* Mobile accordion for directory */
+    .directory-accordion { display: none; }
+    .acc-item {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #EDF3FF;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(7,25,82,0.05);
+    }
+    .acc-header {
+      padding: 1rem 1.25rem;
+      font-weight: 700; color: #071952; font-family: 'Poppins', sans-serif;
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer;
+    }
+    .acc-header i { transition: transform 0.3s; color: #1E5EFF; }
+    .acc-header.open i { transform: rotate(45deg); }
+    .acc-body { padding: 0 1.25rem; max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .acc-body.open { max-height: 300px; padding-bottom: 1rem; }
+    .acc-row { font-size: 0.88rem; color: #4A5568; padding: 0.4rem 0; border-bottom: 1px solid #EDF3FF; display: flex; gap: 0.5rem; }
+    .acc-row strong { color: #071952; min-width: 80px; }
+
+    /* ── Social Media ── */
+    .social-section {
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      background: linear-gradient(135deg, #071952 0%, #0B3D91 100%);
+      text-align: center;
+    }
+    .social-section h2 { color: #fff; font-size: clamp(1.7rem, 3vw, 2.5rem); margin-bottom: 0.75rem; }
+    .social-section p { color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 2.5rem; }
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .social-btn {
+      width: 68px; height: 68px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      border: 2px solid rgba(255,255,255,0.2);
+      color: #fff;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .social-btn::before {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .social-btn:hover { transform: translateY(-6px) scale(1.08); border-color: transparent; }
+    .social-btn:hover::before { opacity: 1; }
+    .social-btn.fb { background: rgba(24,119,242,0.2); }
+    .social-btn.fb::before { background: #1877F2; }
+    .social-btn.fb:hover { box-shadow: 0 10px 30px rgba(24,119,242,0.5); }
+    .social-btn.li { background: rgba(10,102,194,0.2); }
+    .social-btn.li::before { background: #0A66C2; }
+    .social-btn.li:hover { box-shadow: 0 10px 30px rgba(10,102,194,0.5); }
+    .social-btn.ig { background: rgba(225,48,108,0.2); }
+    .social-btn.ig::before { background: linear-gradient(45deg, #f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .social-btn.ig:hover { box-shadow: 0 10px 30px rgba(225,48,108,0.5); }
+    .social-btn.yt { background: rgba(255,0,0,0.2); }
+    .social-btn.yt::before { background: #FF0000; }
+    .social-btn.yt:hover { box-shadow: 0 10px 30px rgba(255,0,0,0.4); }
+    .social-btn.tw { background: rgba(29,161,242,0.2); }
+    .social-btn.tw::before { background: #000; }
+    .social-btn.tw:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .social-btn i { position: relative; z-index: 1; }
+    .social-label { font-size: 0.78rem; color: rgba(255,255,255,0.65); margin-top: 0.8rem; letter-spacing: 0.5px; font-weight: 500; }
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      background: #F7FBFF;
+    }
+    .faq-inner { max-width: 820px; margin: 0 auto; }
+    .faq-item {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #EDF3FF;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 10px rgba(7,25,82,0.04);
+      overflow: hidden;
+      transition: box-shadow 0.25s;
+    }
+    .faq-item:hover { box-shadow: 0 6px 24px rgba(30,94,255,0.08); }
+    .faq-question {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 1rem;
+    }
+    .faq-question span { font-weight: 600; font-size: 1rem; color: #071952; font-family: 'Poppins', sans-serif; line-height: 1.45; }
+    .faq-toggle {
+      width: 32px; height: 32px; flex-shrink: 0;
+      background: #EDF3FF;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; color: #1E5EFF;
+      transition: all 0.3s;
+    }
+    .faq-item.open .faq-toggle { background: #1E5EFF; color: #fff; transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+      padding: 0 1.5rem;
+    }
+    .faq-answer.open { max-height: 200px; padding-bottom: 1.25rem; }
+    .faq-answer p { color: #4A5568; font-size: 0.95rem; line-height: 1.75; margin: 0; }
+
+    /* ── Quick Support ── */
+    .support-section {
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      background: #fff;
+    }
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .support-card {
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .support-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      opacity: 0.08;
+      transition: opacity 0.3s;
+    }
+    .support-card:hover::before { opacity: 0.14; }
+    .support-card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(0,0,0,0.12); }
+    .support-card.blue { background: linear-gradient(135deg, #071952, #0B3D91); }
+    .support-card.royal { background: linear-gradient(135deg, #0B3D91, #1E5EFF); }
+    .support-card.teal { background: linear-gradient(135deg, #0f766e, #14b8a6); }
+    .support-card.amber { background: linear-gradient(135deg, #b45309, #f59e0b); }
+    .support-card i { font-size: 2.2rem; color: rgba(255,255,255,0.9); margin-bottom: 1rem; display: block; }
+    .support-card h4 { color: #fff; font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .support-card p { color: rgba(255,255,255,0.75); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem; }
+    .btn-support {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 0.55rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.25s;
+    }
+    .btn-support:hover { background: rgba(255,255,255,0.28); transform: translateY(-2px); }
+
+    /* ── CTA Footer Banner ── */
+    .cta-section {
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      background: linear-gradient(135deg, #071952 0%, #0B3D91 50%, #1E5EFF 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .cta-section h2 { font-size: clamp(1.8rem, 4vw, 3rem); color: #fff; margin-bottom: 1rem; line-height: 1.2; }
+    .cta-section p { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 2.5rem; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-white {
+      background: #fff; color: #0B3D91; font-weight: 700;
+      padding: 0.95rem 2.2rem; border-radius: 50px; font-size: 1rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all 0.3s;
+    }
+    .btn-cta-white:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.25); }
+    .btn-cta-ghost {
+      border: 2px solid rgba(255,255,255,0.45); color: #fff; font-weight: 600;
+      padding: 0.95rem 2.2rem; border-radius: 50px; font-size: 1rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all 0.3s;
+    }
+    .btn-cta-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; transform: translateY(-3px); }
+
+    /* ── Scroll Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .contact-info-grid { grid-template-columns: repeat(2, 1fr); }
+      .people-grid { grid-template-columns: repeat(2, 1fr); }
+      .support-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .contact-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-illustration { order: -1; }
+      .hero-illust-card { max-width: 100%; }
+      .form-wrap { grid-template-columns: 1fr; }
+      .location-inner { grid-template-columns: 1fr; }
+      .directory-table { display: none; }
+      .directory-accordion { display: block; }
+    }
+
+    @media (max-width: 640px) {
+      .contact-info-grid { grid-template-columns: 1fr; }
+      .people-grid { grid-template-columns: 1fr; }
+      .support-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-illust-card { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Page Loader -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-logo">AADC &amp; AIU</div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="main-navbar">
+    <div class="navbar-brand">
+      <a href="index.html">
+        <img src="assets/AdamasLogo.png" class="nav-logo" alt="Adamas University Logo">
+      </a>
+    </div>
+    <ul class="navbar-nav" id="navbar-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="programs.html" class="nav-link">Programs</a></li>
+      <li><a href="team.html" class="nav-link">Team</a></li>
+      <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 1 — HERO BANNER
+       ═══════════════════════════════════════ -->
+  <section class="contact-hero" id="contact-hero">
+    <div class="hero-shape"></div>
+    <div class="hero-shape"></div>
+    <div class="hero-shape"></div>
+
+    <div class="contact-hero-inner">
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa fa-chevron-right"></i>
+          <span>Contact Us</span>
+        </nav>
+
+        <div class="hero-badge">
+          <i class="fa fa-envelope"></i>
+          Get In Touch
+        </div>
+
+        <h1 class="hero-title">Contact <span>AADC</span></h1>
+        <p class="hero-desc">
+          Get in touch with the Academic and Administrative Development Centre (AADC), Adamas University.
+          We are here to help with FDP registrations, program inquiries, academic collaborations, and more.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#contact-form" class="btn-hero-primary">
+            <i class="fa fa-paper-plane"></i> Send a Message
+          </a>
+          <a href="#location-section" class="btn-hero-ghost">
+            <i class="fa fa-map-marker-alt"></i> Find Our Office
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Stats Illustration -->
+      <div class="hero-illustration">
+        <div class="hero-illust-card">
+          <div class="illust-stat">
+            <i class="fa fa-graduation-cap"></i>
+            <span class="stat-val">6+</span>
+            <span class="stat-lbl">Programs</span>
+          </div>
+          <div class="illust-stat">
+            <i class="fa fa-users"></i>
+            <span class="stat-val">500+</span>
+            <span class="stat-lbl">Participants</span>
+          </div>
+          <div class="illust-stat">
+            <i class="fa fa-university"></i>
+            <span class="stat-val">AIU</span>
+            <span class="stat-lbl">Affiliated</span>
+          </div>
+          <div class="illust-stat">
+            <i class="fa fa-clock"></i>
+            <span class="stat-val">24h</span>
+            <span class="stat-lbl">Response</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 2 — CONTACT INFO CARDS
+       ═══════════════════════════════════════ -->
+  <section class="contact-info-section" id="contact-info">
+    <div class="section-header reveal">
+      <p class="section-subtitle">Reach Out</p>
+      <h2 class="section-title">Contact <span>Information</span></h2>
+    </div>
+    <div class="contact-info-grid">
+      <div class="cinfo-card reveal reveal-delay-1">
+        <div class="cinfo-icon"><i class="fa fa-map-marker-alt"></i></div>
+        <h4>Office Address</h4>
+        <p>Academic &amp; Administrative Development Centre (AADC)<br>
+          Adamas University, Barasat-Barrackpore Road,<br>Kolkata – 700 126, West Bengal, India</p>
+      </div>
+      <div class="cinfo-card reveal reveal-delay-2">
+        <div class="cinfo-icon"><i class="fa fa-envelope"></i></div>
+        <h4>Email Address</h4>
+        <p>For program inquiries &amp; registrations:<br>
+          <a href="mailto:aadc@adamasuniversity.ac.in">aadc@adamasuniversity.ac.in</a>
+        </p>
+      </div>
+      <div class="cinfo-card reveal reveal-delay-3">
+        <div class="cinfo-icon"><i class="fa fa-phone-alt"></i></div>
+        <h4>Phone Number</h4>
+        <p>Main Office: <a href="tel:+913325921009">+91 33 2592 1009</a><br>
+          Enquiries: <a href="tel:+913325921010">+91 33 2592 1010</a>
+        </p>
+      </div>
+      <div class="cinfo-card reveal reveal-delay-4">
+        <div class="cinfo-icon"><i class="fa fa-clock"></i></div>
+        <h4>Working Hours</h4>
+        <p>Monday – Friday: 9:00 AM – 5:00 PM<br>
+          Saturday: 10:00 AM – 2:00 PM<br>
+          Sunday &amp; Holidays: Closed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 3 — PEOPLE CONTACT CARDS
+       ═══════════════════════════════════════ -->
+  <section class="people-section" id="people-contact">
+    <div class="section-header reveal">
+      <p class="section-subtitle">Our Team</p>
+      <h2 class="section-title">Key <span>Contacts</span></h2>
+    </div>
+    <div class="people-grid">
+
+      <div class="people-card reveal reveal-delay-1">
+        <div class="people-card-top">
+          <div class="people-avatar">KB</div>
+          <h4>Dr. Kausheyee Banerjee</h4>
+          <p class="designation">Joint Coordinator – AADC</p>
+          <span class="dept-badge">AADC · Adamas University</span>
+        </div>
+        <div class="people-card-body">
+          <div class="people-contact-row">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:aadc@adamasuniversity.ac.in">aadc@adamasuniversity.ac.in</a>
+          </div>
+          <div class="people-contact-row">
+            <i class="fa fa-briefcase"></i>
+            <span>Associate Professor &amp; Associate Dean, Student Affairs</span>
+          </div>
+          <div class="people-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+            <a href="#" aria-label="University Profile"><i class="fa fa-university"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="people-card reveal reveal-delay-2">
+        <div class="people-card-top">
+          <div class="people-avatar">MM</div>
+          <h4>Prof. (Dr.) Moumita Mukherjee</h4>
+          <p class="designation">Coordinator – AADC</p>
+          <span class="dept-badge">Research &amp; Development · AADC</span>
+        </div>
+        <div class="people-card-body">
+          <div class="people-contact-row">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:aadc@adamasuniversity.ac.in">aadc@adamasuniversity.ac.in</a>
+          </div>
+          <div class="people-contact-row">
+            <i class="fa fa-briefcase"></i>
+            <span>Dean, Research &amp; Development, Adamas University</span>
+          </div>
+          <div class="people-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+            <a href="#" aria-label="University Profile"><i class="fa fa-university"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="people-card reveal reveal-delay-3">
+        <div class="people-card-top">
+          <div class="people-avatar">SB</div>
+          <h4>Prof. (Dr.) Snehamanju Basu</h4>
+          <p class="designation">Convener – IQAC &amp; AADC</p>
+          <span class="dept-badge">IQAC · Student &amp; Cultural Affairs</span>
+        </div>
+        <div class="people-card-body">
+          <div class="people-contact-row">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:aadc@adamasuniversity.ac.in">aadc@adamasuniversity.ac.in</a>
+          </div>
+          <div class="people-contact-row">
+            <i class="fa fa-briefcase"></i>
+            <span>Director-IQAC &amp; Dean, Student &amp; Cultural Affairs</span>
+          </div>
+          <div class="people-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+            <a href="#" aria-label="University Profile"><i class="fa fa-university"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 4 — CONTACT FORM
+       ═══════════════════════════════════════ -->
+  <section class="form-section" id="contact-form">
+    <div class="form-wrap">
+      <!-- Left info -->
+      <div class="form-info reveal">
+        <p class="section-subtitle" style="text-align:left; margin-bottom:0.5rem;">Write To Us</p>
+        <h2>Send Us a <span style="background: linear-gradient(135deg, #0B3D91, #1E5EFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Message</span></h2>
+        <p>Whether you want to register for an upcoming FDP, enquire about collaboration, or simply reach out — we'd love to hear from you. Our team usually responds within 24 hours.</p>
+
+        <div class="form-highlight reveal reveal-delay-1">
+          <h4><i class="fa fa-graduation-cap"></i>Program Registration</h4>
+          <p>Fill out the form with "Program Registration" as your subject and mention the program name in the message.</p>
+        </div>
+        <div class="form-highlight reveal reveal-delay-2">
+          <h4><i class="fa fa-handshake"></i>Collaboration Inquiry</h4>
+          <p>We welcome institutional partnerships and collaborative academic initiatives. Use "Collaboration" as your subject.</p>
+        </div>
+        <div class="form-highlight reveal reveal-delay-3">
+          <h4><i class="fa fa-certificate"></i>Certificate Queries</h4>
+          <p>For certificate-related queries after program completion, select "Certificate Support" from the Department dropdown.</p>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form reveal reveal-delay-2">
+        <h3>Get In Touch</h3>
+        <p class="form-sub">All fields marked with * are required.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Your full name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="emailAddr">Email Address *</label>
+              <input type="email" id="emailAddr" name="emailAddr" placeholder="you@example.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phoneNum">Phone Number</label>
+              <input type="tel" id="phoneNum" name="phoneNum" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="department">Department / Area *</label>
+              <select id="department" name="department" required>
+                <option value="" disabled selected>Select Department</option>
+                <option value="aadc">AADC – General Inquiry</option>
+                <option value="fdp">FDP / Program Registration</option>
+                <option value="iqac">IQAC</option>
+                <option value="academic">Academic Office</option>
+                <option value="admin">Administrative Office</option>
+                <option value="certificate">Certificate Support</option>
+                <option value="collaboration">Collaboration / Partnership</option>
+                <option value="tech">Technical Support</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" placeholder="Brief subject of your message" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <i class="fa fa-paper-plane"></i>
+            Send Message
+          </button>
+
+          <div class="form-success" id="formSuccess">
+            <i class="fa fa-check-circle"></i>
+            <p>Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 5 — LOCATION
+       ═══════════════════════════════════════ -->
+  <section class="location-section" id="location-section">
+    <div class="location-inner">
+      <div class="location-img-wrap reveal">
+        <div class="location-img-placeholder">
+          <i class="fa fa-university"></i>
+          <span>Adamas University Campus</span>
+        </div>
+      </div>
+      <div class="location-info reveal reveal-delay-2">
+        <p class="section-subtitle" style="text-align:left; margin-bottom:0.5rem;">Visit Us</p>
+        <h2>Our <span style="background: linear-gradient(135deg, #0B3D91, #1E5EFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Campus</span> Office</h2>
+        <p>The AADC office is located within the Adamas University campus in Barasat. The campus is well-connected by road and public transport from all major parts of Kolkata.</p>
+
+        <div class="location-detail">
+          <div class="loc-icon"><i class="fa fa-map-marker-alt"></i></div>
+          <div class="loc-text">
+            <strong>Campus Address</strong>
+            <span>Adamas University, Barasat-Barrackpore Road,<br>Barasat, Kolkata – 700 126, West Bengal, India</span>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="loc-icon"><i class="fa fa-clock"></i></div>
+          <div class="loc-text">
+            <strong>Office Hours</strong>
+            <span>Mon–Fri: 9:00 AM – 5:00 PM<br>Sat: 10:00 AM – 2:00 PM</span>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="loc-icon"><i class="fa fa-subway"></i></div>
+          <div class="loc-text">
+            <strong>Nearest Landmarks</strong>
+            <span>Barasat Bus Stand (5 min) · Barasat Railway Station (3 km)<br>NH-12 National Highway (adjacent)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 6 — MAP
+       ═══════════════════════════════════════ -->
+  <section class="map-section" id="map-section">
+    <div class="map-inner">
+      <div class="section-header reveal">
+        <p class="section-subtitle">Our Location</p>
+        <h2 class="section-title">Find Us <span>on Map</span></h2>
+      </div>
+      <div class="map-container reveal">
+        <!-- Embed Google Maps for Adamas University -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.3!2d88.4808!3d22.7163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e9f4e2eecf5%3A0x6e45d4d1f2aefc7e!2sAdamas%20University!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Adamas University Location Map"
+          aria-label="Google Map showing Adamas University location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 7 — DEPARTMENT DIRECTORY
+       ═══════════════════════════════════════ -->
+  <section class="directory-section" id="directory-section">
+    <div class="section-header reveal">
+      <p class="section-subtitle">Directory</p>
+      <h2 class="section-title">Department <span>Contacts</span></h2>
+    </div>
+    <div class="directory-inner">
+      <!-- Desktop Table -->
+      <table class="directory-table reveal" aria-label="Department Contact Directory">
+        <thead>
+          <tr>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Ext.</th>
+            <th>Office Room</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AADC – Main Office</td>
+            <td><a href="mailto:aadc@adamasuniversity.ac.in">aadc@adamasuniversity.ac.in</a></td>
+            <td>+91 33 2592 1009</td>
+            <td><span class="dir-ext">101</span></td>
+            <td>Admin Block, Room 101</td>
+          </tr>
+          <tr>
+            <td>IQAC</td>
+            <td><a href="mailto:iqac@adamasuniversity.ac.in">iqac@adamasuniversity.ac.in</a></td>
+            <td>+91 33 2592 1010</td>
+            <td><span class="dir-ext">102</span></td>
+            <td>Admin Block, Room 102</td>
+          </tr>
+          <tr>
+            <td>Academic Office</td>
+            <td><a href="mailto:academic@adamasuniversity.ac.in">academic@adamasuniversity.ac.in</a></td>
+            <td>+91 33 2592 1011</td>
+            <td><span class="dir-ext">103</span></td>
+            <td>Academic Block, Room A-03</td>
+          </tr>
+          <tr>
+            <td>Administrative Office</td>
+            <td><a href="mailto:admin@adamasuniversity.ac.in">admin@adamasuniversity.ac.in</a></td>
+            <td>+91 33 2592 1012</td>
+            <td><span class="dir-ext">104</span></td>
+            <td>Admin Block, Room 104</td>
+          </tr>
+          <tr>
+            <td>Technical Support</td>
+            <td><a href="mailto:tech@adamasuniversity.ac.in">tech@adamasuniversity.ac.in</a></td>
+            <td>+91 33 2592 1013</td>
+            <td><span class="dir-ext">105</span></td>
+            <td>IT Cell, Ground Floor</td>
+          </tr>
+          <tr>
+            <td>Event Coordination</td>
+            <td><a href="mailto:events@adamasuniversity.ac.in">events@adamasuniversity.ac.in</a></td>
+            <td>+91 33 2592 1014</td>
+            <td><span class="dir-ext">106</span></td>
+            <td>Tagore Auditorium Office</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Mobile Accordion -->
+      <div class="directory-accordion">
+        <div class="acc-item">
+          <div class="acc-header" id="acc1"><span>AADC – Main Office</span><i class="fa fa-plus"></i></div>
+          <div class="acc-body" id="accb1">
+            <div class="acc-row"><strong>Email:</strong><a href="mailto:aadc@adamasuniversity.ac.in">aadc@adamasuniversity.ac.in</a></div>
+            <div class="acc-row"><strong>Phone:</strong><span>+91 33 2592 1009</span></div>
+            <div class="acc-row"><strong>Ext:</strong><span>101</span></div>
+            <div class="acc-row"><strong>Room:</strong><span>Admin Block, Room 101</span></div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" id="acc2"><span>IQAC</span><i class="fa fa-plus"></i></div>
+          <div class="acc-body" id="accb2">
+            <div class="acc-row"><strong>Email:</strong><a href="mailto:iqac@adamasuniversity.ac.in">iqac@adamasuniversity.ac.in</a></div>
+            <div class="acc-row"><strong>Phone:</strong><span>+91 33 2592 1010</span></div>
+            <div class="acc-row"><strong>Ext:</strong><span>102</span></div>
+            <div class="acc-row"><strong>Room:</strong><span>Admin Block, Room 102</span></div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" id="acc3"><span>Academic Office</span><i class="fa fa-plus"></i></div>
+          <div class="acc-body" id="accb3">
+            <div class="acc-row"><strong>Email:</strong><a href="mailto:academic@adamasuniversity.ac.in">academic@adamasuniversity.ac.in</a></div>
+            <div class="acc-row"><strong>Phone:</strong><span>+91 33 2592 1011</span></div>
+            <div class="acc-row"><strong>Ext:</strong><span>103</span></div>
+            <div class="acc-row"><strong>Room:</strong><span>Academic Block, Room A-03</span></div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" id="acc4"><span>Technical Support</span><i class="fa fa-plus"></i></div>
+          <div class="acc-body" id="accb4">
+            <div class="acc-row"><strong>Email:</strong><a href="mailto:tech@adamasuniversity.ac.in">tech@adamasuniversity.ac.in</a></div>
+            <div class="acc-row"><strong>Phone:</strong><span>+91 33 2592 1013</span></div>
+            <div class="acc-row"><strong>Ext:</strong><span>105</span></div>
+            <div class="acc-row"><strong>Room:</strong><span>IT Cell, Ground Floor</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 8 — SOCIAL MEDIA
+       ═══════════════════════════════════════ -->
+  <section class="social-section" id="social-section">
+    <div class="reveal">
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.65); display:block; margin-bottom:0.5rem;">Stay Connected</p>
+      <h2>Connect <span style="background: linear-gradient(90deg,#DCEBFF,#a5c8ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">With Us</span></h2>
+      <p>Follow AADC and Adamas University on social media for the latest updates on FDPs, events, and academic news.</p>
+    </div>
+    <div class="social-icons-row reveal">
+      <div style="text-align:center;">
+        <a href="#" class="social-btn fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <div class="social-label">Facebook</div>
+      </div>
+      <div style="text-align:center;">
+        <a href="#" class="social-btn li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <div class="social-label">LinkedIn</div>
+      </div>
+      <div style="text-align:center;">
+        <a href="#" class="social-btn ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <div class="social-label">Instagram</div>
+      </div>
+      <div style="text-align:center;">
+        <a href="#" class="social-btn yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <div class="social-label">YouTube</div>
+      </div>
+      <div style="text-align:center;">
+        <a href="#" class="social-btn tw" aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+        <div class="social-label">X / Twitter</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 9 — FAQ
+       ═══════════════════════════════════════ -->
+  <section class="faq-section" id="faq-section">
+    <div class="section-header reveal">
+      <p class="section-subtitle">Common Questions</p>
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    </div>
+    <div class="faq-inner">
+
+      <div class="faq-item reveal" id="faq-1">
+        <div class="faq-question" onclick="toggleFAQ('faq-1')">
+          <span>How can I register for an FDP program?</span>
+          <div class="faq-toggle"><i class="fa fa-plus"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>You can register by filling out the contact form on this page with "FDP Registration" as your subject, or by emailing us directly at aadc@adamasuniversity.ac.in. Registration details for each specific program are also provided on the Programs page.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1" id="faq-2">
+        <div class="faq-question" onclick="toggleFAQ('faq-2')">
+          <span>Are certificates provided after program completion?</span>
+          <div class="faq-toggle"><i class="fa fa-plus"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! All participants who successfully complete an AADC program receive a jointly issued certificate from AADC, Adamas University, and the Association of Indian Universities (AIU) — a recognised mark of academic distinction.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2" id="faq-3">
+        <div class="faq-question" onclick="toggleFAQ('faq-3')">
+          <span>Can faculty from external universities participate?</span>
+          <div class="faq-toggle"><i class="fa fa-plus"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. AADC programs are open to faculty and staff from all universities and higher educational institutions across India. We encourage participation from diverse institutional backgrounds.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-3" id="faq-4">
+        <div class="faq-question" onclick="toggleFAQ('faq-4')">
+          <span>How do I receive updates about upcoming programs?</span>
+          <div class="faq-toggle"><i class="fa fa-plus"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>You can follow us on social media or send us your email via the contact form to be added to our mailing list. We announce all upcoming FDPs, workshops, and events through email and social channels.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-4" id="faq-5">
+        <div class="faq-question" onclick="toggleFAQ('faq-5')">
+          <span>How long does it take to get a response after contacting AADC?</span>
+          <div class="faq-toggle"><i class="fa fa-plus"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>Our team typically responds within 24 working hours. For urgent matters, we recommend calling the main office directly during working hours: Monday–Friday, 9:00 AM to 5:00 PM.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 10 — QUICK SUPPORT
+       ═══════════════════════════════════════ -->
+  <section class="support-section" id="support-section">
+    <div class="section-header reveal">
+      <p class="section-subtitle">We're Here to Help</p>
+      <h2 class="section-title">Need <span>Immediate</span> Assistance?</h2>
+    </div>
+    <div class="support-grid">
+      <div class="support-card blue reveal reveal-delay-1">
+        <i class="fa fa-envelope-open-text"></i>
+        <h4>Email Support</h4>
+        <p>General queries, program information, and official communications.</p>
+        <a href="mailto:aadc@adamasuniversity.ac.in" class="btn-support">
+          <i class="fa fa-arrow-right"></i> Email Us
+        </a>
+      </div>
+      <div class="support-card royal reveal reveal-delay-2">
+        <i class="fa fa-user-graduate"></i>
+        <h4>Registration Help</h4>
+        <p>Assistance with FDP or SDP registrations and enrollment processes.</p>
+        <a href="#contact-form" class="btn-support">
+          <i class="fa fa-arrow-right"></i> Register Now
+        </a>
+      </div>
+      <div class="support-card teal reveal reveal-delay-3">
+        <i class="fa fa-laptop-code"></i>
+        <h4>Technical Help</h4>
+        <p>Technical support for online programs, portals, and digital resources.</p>
+        <a href="mailto:tech@adamasuniversity.ac.in" class="btn-support">
+          <i class="fa fa-arrow-right"></i> Get Support
+        </a>
+      </div>
+      <div class="support-card amber reveal reveal-delay-4">
+        <i class="fa fa-calendar-check"></i>
+        <h4>Event Support</h4>
+        <p>Enquiries about specific events, schedules, speakers, and logistics.</p>
+        <a href="mailto:events@adamasuniversity.ac.in" class="btn-support">
+          <i class="fa fa-arrow-right"></i> Event Help
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 11 — CTA FOOTER BANNER
+       ═══════════════════════════════════════ -->
+  <section class="cta-section" id="cta-section">
+    <div class="cta-inner">
+      <h2>Let's Collaborate and<br>Grow Together</h2>
+      <p>Join hundreds of faculty members who have advanced their careers through AADC's world-class academic development programs.</p>
+      <div class="cta-btns">
+        <a href="#contact-form" class="btn-cta-white">
+          <i class="fa fa-envelope"></i> Contact AADC
+        </a>
+        <a href="programs.html" class="btn-cta-ghost">
+          <i class="fa fa-graduation-cap"></i> Explore Programs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-grid">
+      <div class="footer-logo-col">
+        <div class="footer-logo-wrap">
+          <svg class="footer-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="white" stroke-width="2" />
+            <path d="M50 15L80 32.5V55C80 70 50 85 50 85C50 85 20 70 20 55V32.5L50 15Z" fill="#1E5EFF" fill-opacity="0.3" stroke="#1E5EFF" stroke-width="2" />
+            <path d="M30 40H70" stroke="white" stroke-width="3" stroke-linecap="round" />
+            <path d="M35 50H65" stroke="white" stroke-width="3" stroke-linecap="round" />
+            <path d="M42 60H58" stroke="white" stroke-width="3" stroke-linecap="round" />
+          </svg>
+          <div class="brand-text">
+            <span class="brand-title" style="color: var(--white);">AADC</span>
+            <span class="brand-subtitle" style="color: var(--sky-blue);">Adamas &amp; AIU</span>
+          </div>
+        </div>
+        <p>A flagship centre establishing high benchmarks in faculty grooming, outcomes-focused learning architectures, and NEP policy adaptation.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About AADC</a>
+          <a href="programs.html">Programs</a>
+          <a href="team.html">Our Team</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>AADC Programs</h3>
+        <div class="footer-links">
+          <a href="programs.html#program-1">Literature, Language &amp; Media</a>
+          <a href="programs.html#program-2">Leadership &amp; Professional Dev.</a>
+          <a href="programs.html#program-3">Pedagogy &amp; Teaching</a>
+          <a href="programs.html#program-4">NEP &amp; Accreditations</a>
+          <a href="programs.html#program-5">Indian Knowledge System</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <div class="footer-contact-info">
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
+            <span>Adamas University, Barasat-Barrackpore Road, Kolkata – 700 126</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
+            <span>aadc@adamasuniversity.ac.in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Academic and Administrative Development Centre (AADC), Adamas University. All Rights Reserved.</p>
+      <span class="footer-tagline">Empowering Academic Excellence &amp; Governance.</span>
+    </div>
+  </footer>
+
+  <!-- Shared Script -->
+  <script src="script.js"></script>
+
+  <script>
+    /* ── FAQ Toggle ── */
+    function toggleFAQ(id) {
+      const item = document.getElementById(id);
+      const answer = item.querySelector('.faq-answer');
+      const toggle = item.querySelector('.faq-toggle');
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-answer').classList.remove('open');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.classList.add('open');
+      }
+    }
+
+    /* ── Directory Accordion (Mobile) ── */
+    document.querySelectorAll('.acc-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const bodyId = 'accb' + header.id.replace('acc','');
+        const body = document.getElementById(bodyId);
+        const isOpen = header.classList.contains('open');
+
+        document.querySelectorAll('.acc-header').forEach(h => h.classList.remove('open'));
+        document.querySelectorAll('.acc-body').forEach(b => b.classList.remove('open'));
+
+        if (!isOpen) {
+          header.classList.add('open');
+          body.classList.add('open');
+        }
+      });
+    });
+
+    /* ── Contact Form Submit ── */
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa fa-check"></i> Message Sent!';
+        btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+        document.getElementById('formSuccess').style.display = 'block';
+        this.reset();
+
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message';
+          btn.style.background = '';
+          btn.disabled = false;
+          document.getElementById('formSuccess').style.display = 'none';
+        }, 5000);
+      }, 1800);
+    });
+
+    /* ── Scroll Reveal ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>
