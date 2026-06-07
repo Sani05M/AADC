@@ -51,7 +51,12 @@ jobs:
           port: 65002
           script: |
             cd domains/academic.auaicoe.in/public_html
-            git pull origin main
+            if [ ! -d ".git" ]; then
+              git init
+              git remote add origin https://github.com/Sani05M/AADC.git
+            fi
+            git fetch origin main
+            git reset --hard origin/main
 ```
 
 ---
