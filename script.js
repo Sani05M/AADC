@@ -172,18 +172,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('slide-right');
 
   if (scrollWrapper && prevBtn && nextBtn) {
-    const scrollAmount = 360; // Approximate card width + gap
+    const getScrollAmount = () => {
+      const card = scrollWrapper.querySelector('.program-card');
+      const gap = parseFloat(window.getComputedStyle(scrollWrapper).gap) || 32;
+      return card ? (card.offsetWidth + gap) : 360;
+    };
 
     nextBtn.addEventListener('click', () => {
       scrollWrapper.scrollBy({
-        left: scrollAmount,
+        left: getScrollAmount(),
         behavior: 'smooth'
       });
     });
 
     prevBtn.addEventListener('click', () => {
       scrollWrapper.scrollBy({
-        left: -scrollAmount,
+        left: -getScrollAmount(),
         behavior: 'smooth'
       });
     });
