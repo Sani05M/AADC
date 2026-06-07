@@ -1,0 +1,33 @@
+name: Deploy Static Website to Hostinger
+
+on:
+  push:
+    branches:
+      - main # Triggers the deployment on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the code from GitHub repository
+      - name: 🚚 Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Deploy to Hostinger via FTP
+      - name: 🚀 FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: sftp
+          port: 65002
+          # Hostinger's subdirectory for this domain
+          server-dir: domains/academic.auaicoe.in/public_html/
+          # Exclude git config, workflows, and markdown docs from being uploaded to production
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
+            README.md
