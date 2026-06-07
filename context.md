@@ -13,11 +13,11 @@ This file summarizes the deployment setup, configuration, and troubleshooting st
 ---
 
 ## 2. CI/CD Deployment Setup
-We set up a GitHub Actions workflow to automate deployment on every `git push` using FTPS.
+We set up a GitHub Actions workflow to automate deployment on every `git push` using SSH.
 
 * **Workflow File**: `.github/workflows/deploy.yml`
-* **Protocol**: FTPS (FTP over SSL/TLS)
-* **Hostinger FTPS Port**: `21`
+* **Protocol**: SSH (`git pull` on remote server)
+* **Hostinger SSH Port**: `65002`
 
 ### GitHub Secrets to Configure:
 You must add these secrets in your GitHub repository under **Settings > Secrets and variables > Actions**:
@@ -42,28 +42,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the code from GitHub repository
-      - name: 🚚 Checkout code
-        uses: actions/checkout@v4
-
-      # Step 2: Deploy to Hostinger via FTP
-      - name: 🚀 FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: 🚀 Remote SSH Git Pull
+        uses: appleboy/ssh-action@v1.0.3
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          # Hostinger's subdirectory for this domain
-          server-dir: domains/academic.auaicoe.in/public_html/
-          # Exclude git config, workflows, and markdown docs from being uploaded to production
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            .github/**
-            README.md
+          port: 65002
+          script: |
+            cd domains/academic.auaicoe.in/public_html
+            git pull origin main
 ```
 
 ---
