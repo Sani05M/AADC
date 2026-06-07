@@ -752,6 +752,7 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .announcement-label-dot {
@@ -773,11 +774,14 @@ img {
 }
 
 .announcement-slider-wrap {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
   align-items: center;
+  mask-image: linear-gradient(to right, transparent, white 15px, white calc(100% - 15px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, white 15px, white calc(100% - 15px), transparent);
 }
 
 .announcement-track {
@@ -2509,6 +2513,12 @@ img {
   .slider-btn svg {
     width: 16px;
     height: 16px;
+  }
+
+  .announcement-label {
+    margin-left: 1rem;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.75rem;
   }
 }
 
