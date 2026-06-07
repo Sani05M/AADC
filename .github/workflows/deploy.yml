@@ -20,8 +20,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: sftp
-          port: 65002
+          protocol: ftps
+          port: 21
           # Hostinger's subdirectory for this domain
           server-dir: domains/academic.auaicoe.in/public_html/
           # Exclude git config, workflows, and markdown docs from being uploaded to production
