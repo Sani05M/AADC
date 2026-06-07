@@ -771,7 +771,7 @@ img {
 .announcement-track {
   display: flex;
   gap: 3rem;
-  animation: marquee 25s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 
 .announcement-track:hover {
@@ -897,7 +897,7 @@ img {
 /* 5.5 VISION & MISSION SECTION */
 .vision-mission {
   padding: var(--section-padding-desktop);
-  background: var(--ice-blue);
+  background: var(--white);
   position: relative;
 }
 
@@ -1786,7 +1786,7 @@ img {
 /* 5.12 TEAM PREVIEW SECTION */
 .team {
   padding: var(--section-padding-desktop);
-  background: var(--ice-blue);
+  background: var(--white);
   position: relative;
 }
 
@@ -1846,7 +1846,7 @@ img {
 /* 5.13 CTA SECTION */
 .cta {
   padding: 6.5rem 2rem;
-  background: var(--ice-blue);
+  background: var(--white);
   /* Same as previous section */
   color: var(--primary-deep);
   text-align: center;
@@ -2042,13 +2042,11 @@ img {
 .footer-logo-col {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .footer-logo-wrap {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
 .footer-logo {
@@ -2524,8 +2522,8 @@ img {
 }
 
 /* Hero row wrapper inside unified card */
-.program-card-unified > .program-card-img,
-.program-card-unified > .program-card-content {
+.program-card-unified>.program-card-img,
+.program-card-unified>.program-card-content {
   padding: 2.5rem;
 }
 
@@ -2574,7 +2572,7 @@ img {
 .program-card-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   transition: transform 0.5s ease;
 }
 
@@ -3325,6 +3323,7 @@ img {
 
 /* Tablet */
 @media (max-width: 991px) {
+
   /* Hero card: stack image on top */
   .program-card-unified {
     grid-template-columns: 1fr;
@@ -3452,13 +3451,13 @@ img {
     text-align: center;
     padding: 1.5rem;
   }
-  
+
   .report-actions {
     width: 100%;
     flex-direction: column;
     margin-top: 0.5rem;
   }
-  
+
   .report-actions .btn {
     width: 100%;
     justify-content: center;

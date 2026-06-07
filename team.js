@@ -22,101 +22,11 @@ const DEFAULT_TEAM_DATA = {
     bio: "Prof. (Dr.) Radha Tamal Goswami serves as the Pro-Vice Chancellor of Adamas University. He actively guides curriculum restructuring, outcome tracking, and professional development programs conducted at AADC.",
     skills: ["Computational Engineering", "Curriculum Design", "Quality Assurance", "Institutional Planning"]
   },
-  "kallol-paul": {
-    name: "Prof. (Dr.) Kallol Paul", role: "Vice-Chancellor", org: "University of Kalyani & Sadhu Ramchand Murmu University of Jhargram",
-    email: "kalloldada@gmail.com", category: "Academic Expert",
-    bio: "Prof. (Dr.) Kallol Paul serves as the Vice-Chancellor of University of Kalyani. A leading academician in Mathematics, he contributes to AADC by designing advanced research methodology workshops and capacity building seminars.",
-    skills: ["Functional Analysis", "Academic Governance", "Research Ethics", "Capacity Building"]
-  },
-  "sivaji-chakravorti": {
-    name: "Prof. (Dr.) Sivaji Chakravorti", role: "Professor, Dept. of Electrical Engineering", org: "Jadavpur University (Former Director, NIT Calicut)",
-    email: "s.chakravorti@gmail.com", category: "Academic Expert",
-    bio: "Prof. (Dr.) Sivaji Chakravorti is a distinguished professor of Electrical Engineering at Jadavpur University and former Director of NIT Calicut. He brings valuable insights on institutional development and technical education excellence.",
-    skills: ["High Voltage Engineering", "Technical Pedagogy", "Institutional Leadership", "Accreditation Frameworks"]
-  },
-  "abhijit-chanda": {
-    name: "Prof. Abhijit Chanda", role: "Director-IQAC & Professor, Dept. of Mechanical Engineering", org: "Jadavpur University",
-    email: "abhijitchanda.biomed@gmail.com", category: "Academic Expert",
-    bio: "Prof. Abhijit Chanda leads quality initiatives as the IQAC Director at Jadavpur University. At AADC, he focuses on training faculty on outcomes-based learning design and internal quality assurance parameters.",
-    skills: ["Quality Control in Education", "Biomaterials", "IQAC Guidelines", "Outcome-Based Education"]
-  },
-  "amitava-datta": {
-    name: "Prof. Amitava Datta", role: "Pro-Vice Chancellor", org: "Jadavpur University",
-    email: "amitava.datta@jadavpuruniversity.in", category: "Academic Expert",
-    bio: "Prof. Amitava Datta is the Pro-Vice Chancellor of Jadavpur University. He supports AADC's mission to bridge the gap between traditional research and modern educational technologies.",
-    skills: ["Thermal Power Engineering", "Educational Technology", "Academic Administration", "Blended Learning"]
-  },
-  "rajat-acharyya": {
-    name: "Dr. Rajat Acharyya", role: "Director (Additional Charge), UGC-HRDC & Professor, Dept. of Economics", org: "Jadavpur University",
-    email: "rajat.acharyya@gmail.com", category: "Academic Expert",
-    bio: "Dr. Rajat Acharyya is a renowned Professor of Economics and Director (Additional Charge) of UGC-Human Resource Development Centre at Jadavpur University. He contributes expertise in designing faculty grooming frameworks.",
-    skills: ["International Economics", "Economics Pedagogy", "Human Resource Development", "Policy Design"]
-  },
   "biswajit-ghosh": {
     name: "Prof. Biswajit Ghosh", role: "Professor & HoD, Dept. of Sociology & Associate Dean-SOLACS", org: "Adamas University",
     email: "biswajit.ghosh1@adamasuniversity.ac.in", category: "Academic Expert",
     bio: "Prof. Biswajit Ghosh heads the Sociology Department and serves as the Associate Dean of SOLACS at Adamas University. He guides multidisciplinary research and curriculum inclusion policies at AADC.",
     skills: ["Sociology of Education", "Multidisciplinary Studies", "Qualitative Methods", "Inclusive Curriculum"]
-  },
-  "pulok-kumar-mukherjee": {
-    name: "Prof. Pulok Kumar Mukherjee", role: "Professor, Dept. of Pharmaceutical Technology, School of Natural Product Studies", org: "Jadavpur University",
-    email: "pulokm@gmail.com", category: "Academic Expert",
-    bio: "Prof. Pulok Kumar Mukherjee is a leading researcher in natural products chemistry. He acts as a mentor at AADC for capacity building in Indian Knowledge Systems and research commercialization.",
-    skills: ["Ethnopharmacology", "IKS Integration", "Research Commercialization", "IP Rights & Patents"]
-  },
-  "asis-majumdar": {
-    name: "Prof. Asis Majumdar", role: "Director & Prof., School of Water Resources Engineering, Director-IIPC", org: "Jadavpur University",
-    email: "asism.ju@gmail.com", category: "Academic Expert",
-    bio: "Prof. Asis Majumdar is a senior expert in water resources and Director of IIPC at Jadavpur University. He guides the implementation of collaborative research frameworks and university-industry linkages at AADC.",
-    skills: ["Water Resources", "Industry-Academia Collaboration", "Project Management", "Sustainable Dev"]
-  },
-  "kanchan-mallick": {
-    name: "Mr. Kanchan Mallick", role: "Regional Head – Trend Micro India Pvt Ltd (East India, Bangladesh & Bhutan)", org: "Trend Micro India Pvt Ltd",
-    email: "kanchan_m@trendmicro.com", category: "Industry Leader",
-    bio: "Mr. Kanchan Mallick is a prominent technology industry leader, serving as Regional Head for Trend Micro in East India, Bangladesh, and Bhutan. He facilitates AADC workshops on cyber security education and digital asset safety.",
-    skills: ["Cyber Security", "IT Infrastructure", "Industry-Academia Bridging", "Asset Protection"]
-  },
-  "debasish-pal": {
-    name: "Mr. Debasish Pal", role: "Finance Officer", org: "Tripura University",
-    email: "debasishpal@tripurauniv.ac.in", category: "Administrator",
-    bio: "Mr. Debasish Pal is the Finance Officer at Tripura University. He coordinates AADC sessions focused on financial governance, public accounts management, and administrative efficiency.",
-    skills: ["Financial Governance", "Procurement & Audit", "Public Accounts", "Budgetary Controls"]
-  },
-  "debajyoti-konar": {
-    name: "Dr. Debajyoti Konar", role: "Registrar", org: "Presidency University",
-    email: "registrar@presiuniv.ac.in", category: "Administrator",
-    bio: "Dr. Debajyoti Konar is the Registrar of Presidency University. He shares his vast expertise in university governance, academic laws, administrative compliance, and university admissions management.",
-    skills: ["University Administration", "Academic Laws", "Compliance", "Crisis Management"]
-  },
-  "amiya-kumar-panda": {
-    name: "Prof. Amiya Kumar Panda", role: "Vice Chancellor", org: "Rani Rashmoni Green University",
-    email: "vcrrgu@gmail.com", category: "Academic Expert",
-    bio: "Prof. Amiya Kumar Panda is the Vice Chancellor of Rani Rashmoni Green University. A pioneer in chemical sciences, he leads environmental and scientific sustainability workshops for academic administrators.",
-    skills: ["Colloidal Chemistry", "Scientific Sustainability", "University Governance", "Biotechnology"]
-  },
-  "sanjukta-mondal-parui": {
-    name: "Dr. Sanjukta Mondal Parui", role: "Associate Professor, Dept. of Zoology & Director-IQAC", org: "Lady Brabourne College",
-    email: "sanj.kitparu@gmail.com", category: "Academic Expert",
-    bio: "Dr. Sanjukta Mondal Parui is the IQAC Director and an Associate Professor of Zoology at Lady Brabourne College. She facilitates AADC sessions on student-centric pedagogy and quality benchmarks in collegiate education.",
-    skills: ["Collegiate Quality Control", "Zoology", "Student Mentorship", "IQAC Management"]
-  },
-  "ashish-pundhir": {
-    name: "Dr. Ashish Pundhir", role: "MD (Community Medicine), Diploma in Community & Mental Health (NIMHANS), Dept. of Community Medicine & Family Medicine", org: "AIIMS, Kalyani",
-    email: "ashish.cmfm@aiimskalyani.edu.in", category: "Academic Expert",
-    bio: "Dr. Ashish Pundhir is an MD in Community Medicine and holds a Diploma in Community & Mental Health from NIMHANS. He designs programs for healthcare educators and research ethics training.",
-    skills: ["Community Medicine", "Mental Health Education", "Public Health Policy", "Research Ethics"]
-  },
-  "debanjan-chakrabarti": {
-    name: "Mr. Debanjan Chakrabarti", role: "Director, East and Northeast India", org: "British Council",
-    email: "debanjan.chakrabarti@britishcouncil.org", category: "Industry Leader",
-    bio: "Mr. Debanjan Chakrabarti directs British Council initiatives in East and Northeast India. He works with AADC to foster international partnerships, language teaching frameworks, and global academic collaboration.",
-    skills: ["International Education", "Language Pedagogy", "Cultural Relations", "Partnership Ecosystems"]
-  },
-  "sudeshna-mukhopadhyay": {
-    name: "Ms. Sudeshna Mukhopadhyay", role: "Vice President", org: "Havells India Ltd.",
-    email: "sudeshna.mukhopadhyay@outlook.com", category: "Industry Leader",
-    bio: "Ms. Sudeshna Mukhopadhyay is an executive leader with Havells India. She provides expert sessions for AADC on corporate social responsibility, leadership management, and designing university courses aligned to industry expectations.",
-    skills: ["Corporate Management", "Leadership Coaching", "Industry-Academia Linkage", "Brand Strategy"]
   },
   "ajitava-raychaudhuri": {
     name: "Prof. (Dr.) Ajitava Raychaudhuri", role: "Dean of SoLAS & HoD, Dept. of Economics", org: "Adamas University",
@@ -141,12 +51,6 @@ const DEFAULT_TEAM_DATA = {
     email: "saptarshi.chatterjee@adamasuniversity.ac.in", category: "Academic Expert",
     bio: "Dr. Saptarshi Chatterjee is an Associate Professor of Biotechnology and serves as the Associate Director of Planning & Monitoring at Adamas University. He handles outcome tracking and coordination for AADC events.",
     skills: ["Biotechnology", "Planning & Monitoring", "Academic Coordination", "Analytics"]
-  },
-  "chiranjib-bhattacharya": {
-    name: "Dr. Chiranjib Bhattacharya", role: "President", org: "West Bengal Council of Higher Secondary Education (WBCHSE)",
-    email: "president@wbchse.org", category: "Academic Expert",
-    bio: "Dr. Chiranjib Bhattacharya is the President of WBCHSE. He brings invaluable input on secondary and higher education transitions, curriculum alignment, and policy integration to support AADC higher education initiatives.",
-    skills: ["Secondary Education Alignment", "Educational Policy", "Council Governance", "Quality Benchmarks"]
   }
 };
 
