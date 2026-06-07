@@ -63,7 +63,7 @@ function loadTeamData() {
       if (data[id]) Object.assign(data[id], textOverrides[id]);
       else data[id] = textOverrides[id]; // new member added by admin
     });
-  } catch(e) { console.warn('Override parse error:', e); }
+  } catch (e) { console.warn('Override parse error:', e); }
   return data;
 }
 
@@ -129,7 +129,7 @@ function applyPhotoOverrides() {
         img.src = photos[id];
       });
     });
-  } catch(e) {}
+  } catch (e) { }
 }
 
 function categoryToSlug(category) {
@@ -271,8 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. HAMBURGER MENU
   const hamburger = document.getElementById('hamburger-btn');
-  const navMenu   = document.getElementById('navbar-links');
-  const navbar    = document.getElementById('main-navbar');
+  const navMenu = document.getElementById('navbar-links');
+  const navbar = document.getElementById('main-navbar');
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
@@ -338,9 +338,9 @@ document.addEventListener('DOMContentLoaded', () => {
   applyPhotoOverrides();
 
   // ── PROFILE MODAL ────────────────────────────────────────────────────────
-  const modal         = document.getElementById('profile-modal');
+  const modal = document.getElementById('profile-modal');
   const modalBackdrop = document.getElementById('modal-backdrop');
-  const modalClose    = document.getElementById('modal-close');
+  const modalClose = document.getElementById('modal-close');
 
   const openProfile = (id) => {
     const data = teamData[id];
@@ -352,16 +352,16 @@ document.addEventListener('DOMContentLoaded', () => {
     img.src = photoSrc;
     img.onerror = () => { img.src = 'assets/team_1.jpg'; };
 
-    document.getElementById('modal-name').textContent     = data.name;
-    document.getElementById('modal-role').textContent     = data.role;
-    document.getElementById('modal-org').textContent      = data.org;
+    document.getElementById('modal-name').textContent = data.name;
+    document.getElementById('modal-role').textContent = data.role;
+    document.getElementById('modal-org').textContent = data.org;
     document.getElementById('modal-category').textContent = data.category;
-    document.getElementById('modal-email').textContent    = data.email;
+    document.getElementById('modal-email').textContent = data.email;
     //document.getElementById('modal-email-link').href      = `mailto:${data.email}`;
     const emailLink = document.getElementById('modal-email-link');
     emailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${data.email}`;
     emailLink.target = "_blank";
-    document.getElementById('modal-bio').textContent      = data.bio;
+    document.getElementById('modal-bio').textContent = data.bio;
 
     const skillsEl = document.getElementById('modal-skills');
     skillsEl.innerHTML = '';
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  if (modalClose)    modalClose.addEventListener('click', closeProfile);
+  if (modalClose) modalClose.addEventListener('click', closeProfile);
   if (modalBackdrop) modalBackdrop.addEventListener('click', closeProfile);
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && modal.classList.contains('active')) closeProfile();
@@ -398,20 +398,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── SEARCH & FILTER ───────────────────────────────────────────────────────
   const searchInput = document.getElementById('search-input');
-  const filterBtns  = document.querySelectorAll('.filter-btn');
+  const filterBtns = document.querySelectorAll('.filter-btn');
   const teamWrappers = document.querySelectorAll('.team-card-wrap');
 
   let activeFilter = 'all';
-  let searchQuery  = '';
+  let searchQuery = '';
 
   const applyFilters = () => {
     teamWrappers.forEach(wrap => {
-      const cat  = wrap.getAttribute('data-category');
+      const cat = wrap.getAttribute('data-category');
       const name = (wrap.getAttribute('data-name') || '').toLowerCase();
       const role = (wrap.getAttribute('data-role') || '').toLowerCase();
-      const org  = (wrap.getAttribute('data-org')  || '').toLowerCase();
+      const org = (wrap.getAttribute('data-org') || '').toLowerCase();
 
-      const matchCat    = activeFilter === 'all' || cat === activeFilter;
+      const matchCat = activeFilter === 'all' || cat === activeFilter;
       const matchSearch = !searchQuery || name.includes(searchQuery) || role.includes(searchQuery) || org.includes(searchQuery);
 
       if (matchCat && matchSearch) {

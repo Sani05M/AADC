@@ -2261,7 +2261,8 @@ img {
   /* First section of secondary pages clears fixed navbar */
   .about-section:first-of-type,
   .directory-section,
-  .gallery-hero-section {
+  .gallery-hero-section,
+  .program-listing {
     padding-top: calc(100px + 3.5rem) !important;
   }
 
@@ -2423,7 +2424,8 @@ img {
   /* First section of secondary pages clears fixed navbar on mobile */
   .about-section:first-of-type,
   .directory-section,
-  .gallery-hero-section {
+  .gallery-hero-section,
+  .program-listing {
     padding-top: calc(90px + 2.5rem) !important;
   }
 
@@ -2531,7 +2533,8 @@ img {
   /* First section of secondary pages clears fixed navbar on extra small screens */
   .about-section:first-of-type,
   .directory-section,
-  .gallery-hero-section {
+  .gallery-hero-section,
+  .program-listing {
     padding-top: calc(90px + 1.75rem) !important;
   }
 
