@@ -80,36 +80,36 @@ function getPhotoSrc(memberId) {
   const photoMap = {
 
     // Leadership
-    "samit-ray": "assets/team_new_photos/Samit-Ray-Image.jpg",
-    "suranjan-das": "assets/team_new_photos/Suranjan-Das-Image.jpg",
-    "radha-tamal-goswami": "assets/team_new_photos/Radha-Tamal-Goswami.jpg",
+    "samit-ray": "/assets/team_new_photos/Samit-Ray-Image.jpg",
+    "suranjan-das": "/assets/team_new_photos/Suranjan-Das-Image.jpg",
+    "radha-tamal-goswami": "/assets/team_new_photos/Radha-Tamal-Goswami.jpg",
 
     // Academic Experts
-    "kallol-paul": "assets/team_new_photos/Kallol-Paul.jpg",
-    "sivaji-chakravorti": "assets/team_new_photos/sivaji-chakravorti.jpg",
-    "abhijit-chanda": "assets/team_new_photos/Abhijit-Chanda-2.jpg",
-    "amitava-datta": "assets/team_new_photos/Amitava-Dutta-new.jpg",
-    "rajat-acharyya": "assets/team_new_photos/rajat-acharyya.jpg",
-    "biswajit-ghosh": "assets/team_new_photos/biswajit-ghosh.jpg",
-    "pulok-kumar-mukherjee": "assets/team_new_photos/pulok-kumar-mukherjee.jpg",
-    "asis-majumdar": "assets/team_new_photos/asis-majumdar.jpg",
-    "amiya-kumar-panda": "assets/team_new_photos/Amiya-Kumar-Panda-2.jpg",
-    "sanjukta-mondal-parui": "assets/team_new_photos/sanjukta-mondal-parui.jpg",
-    "ashish-pundhir": "assets/team_new_photos/Ashish-Pundhir-2.jpg",
-    "ajitava-raychaudhuri": "assets/team_new_photos/Ajitava-Raychaudhuri.jpg",
-    "rudra-prasad-saha": "assets/team_new_photos/Rudra-Prasad-Saha-2.jpg",
-    "moumita-mukherjee": "assets/team_new_photos/Moumita-Mukherjee.jpg",
-    "saptarshi-chatterjee": "assets/team_new_photos/Saptarshi-Chatterjee.jpg",
-    "chiranjib-bhattacharya": "assets/team_new_photos/chiranjib-bhattacharya.jpg",
+    "kallol-paul": "/assets/team_new_photos/Kallol-Paul.jpg",
+    "sivaji-chakravorti": "/assets/team_new_photos/sivaji-chakravorti.jpg",
+    "abhijit-chanda": "/assets/team_new_photos/Abhijit-Chanda-2.jpg",
+    "amitava-datta": "/assets/team_new_photos/Amitava-Dutta-new.jpg",
+    "rajat-acharyya": "/assets/team_new_photos/rajat-acharyya.jpg",
+    "biswajit-ghosh": "/assets/team_new_photos/biswajit-ghosh.jpg",
+    "pulok-kumar-mukherjee": "/assets/team_new_photos/pulok-kumar-mukherjee.jpg",
+    "asis-majumdar": "/assets/team_new_photos/asis-majumdar.jpg",
+    "amiya-kumar-panda": "/assets/team_new_photos/Amiya-Kumar-Panda-2.jpg",
+    "sanjukta-mondal-parui": "/assets/team_new_photos/sanjukta-mondal-parui.jpg",
+    "ashish-pundhir": "/assets/team_new_photos/Ashish-Pundhir-2.jpg",
+    "ajitava-raychaudhuri": "/assets/team_new_photos/Ajitava-Raychaudhuri.jpg",
+    "rudra-prasad-saha": "/assets/team_new_photos/Rudra-Prasad-Saha-2.jpg",
+    "moumita-mukherjee": "/assets/team_new_photos/Moumita-Mukherjee.jpg",
+    "saptarshi-chatterjee": "/assets/team_new_photos/Saptarshi-Chatterjee.jpg",
+    "chiranjib-bhattacharya": "/assets/team_new_photos/chiranjib-bhattacharya.jpg",
 
     // Industry Leaders
-    "kanchan-mallick": "assets/team_new_photos/Kanchan-Mallick-2.jpg",
-    "debanjan-chakrabarti": "assets/team_new_photos/Debanjan-Chakrabarti-2.jpg",
-    "sudeshna-mukhopadhyay": "assets/team_new_photos/Sudeshna-Mukhopadhyay-2.jpg",
+    "kanchan-mallick": "/assets/team_new_photos/Kanchan-Mallick-2.jpg",
+    "debanjan-chakrabarti": "/assets/team_new_photos/Debanjan-Chakrabarti-2.jpg",
+    "sudeshna-mukhopadhyay": "/assets/team_new_photos/Sudeshna-Mukhopadhyay-2.jpg",
 
     // Administrators
-    "debasish-pal": "assets/team_new_photos/Debasish-Pal.jpg",
-    "debajyoti-konar": "assets/team_new_photos/Debajyoti-Konar.jpg"
+    "debasish-pal": "/assets/team_new_photos/Debasish-Pal.jpg",
+    "debajyoti-konar": "/assets/team_new_photos/Debajyoti-Konar.jpg"
 
   };
 
@@ -117,7 +117,7 @@ function getPhotoSrc(memberId) {
     return photoMap[memberId];
   }
 
-  return "assets/team_1.jpg";
+  return "/assets/team_1.jpg";
 }
 
 // ── Apply photo overrides to all <img> tags on page ─────────────────────────
@@ -168,7 +168,7 @@ function updateDirectoryCard(wrapper, id, data) {
     //img.src = getPhotoSrc(id);
     img.alt = data.name || 'Team member';
     img.setAttribute('data-member-id', id);
-    img.onerror = () => { img.src = 'assets/team_1.jpg'; };
+    img.onerror = () => { img.src = '/assets/team_1.jpg'; };
   }
 
   const badge = wrapper.querySelector('.team-card-badge');
@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const photoSrc = getPhotoSrc(id);
     const img = document.getElementById('modal-img');
     img.src = photoSrc;
-    img.onerror = () => { img.src = 'assets/team_1.jpg'; };
+    img.onerror = () => { img.src = '/assets/team_1.jpg'; };
 
     document.getElementById('modal-name').textContent     = data.name;
     document.getElementById('modal-role').textContent     = data.role;
